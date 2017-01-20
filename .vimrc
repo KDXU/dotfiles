@@ -11,10 +11,10 @@ if has('vim_starting')
 			let g:neobundle_default_git_protocol='https'
 			NeoBundleFetch 'Shougo/neobundle.vim'
 			NeoBundle 'Shougo/neocomplete.vim'
-			NeoBundle 'Shougo/neocomplete-rsence.vim'
-			NeoBundle 'Shougo/neoinclude.vim'
 			NeoBundle 'pangloss/vim-javascript'
+			NeoBundleLazy 'OrangeT/vim-csharp', { 'autoload': { 'filetypes': [ 'cs', 'csi', 'csx' ] } }
 			NeoBundle 'osyo-manga/shabadou.vim'
+			NeoBundle 'https://github.com/powerline/powerline.git', { 'rtp' : 'powerline/bindings/vim'}
 			NeoBundle 'szw/vim-tags'
 			NeoBundle 'thinca/vim-ref'
 			NeoBundle 'yuku-t/vim-ref-ri'
@@ -36,6 +36,8 @@ if has('vim_starting')
 			set t_Co=256
 			syntax on
 			color dracula
+			set guifont=SauceCodePowerline-Regular:h14
+			set antialias
 			set statusline+=%#warningmsg#
 			set statusline+=%{SyntasticStatuslineFlag()}
 			set statusline+=%*
