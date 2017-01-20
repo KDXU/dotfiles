@@ -1,0 +1,35 @@
+[user]
+    name = Kyoko KADOWAKI
+    email = kyoko.kadowaki@gmail.com
+[color]
+    diff = auto
+    grep = auto
+    status = auto
+    branch = auto
+    interactive = auto
+[core]
+    editor = vim
+[alias]
+    ps = push
+    pl = pull
+    ci = commit
+    st = status
+    br = branch
+    co = checkout
+[merge]
+    ff = false
+[push]
+    default = upstream
+[pull]
+    rebase = true
+[http]
+    sslVerify = false
+[diff]
+    compactionHeuristic = true
+[commit]
+    verbose = true
+    template = ~/dotfiles/gitmessage.txt
+[pager]
+    log = diff-highlight | less
+    show = diff-highlight | less
+    diff = diff-highlight | less

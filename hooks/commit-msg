@@ -1,0 +1,10 @@
+#!/usr/bin/env ruby
+message_file = ARGV[0]
+message = File.read(message_file, :encoding => Encoding::UTF_8)
+
+current_branch = `git branch | grep '*'`.chomp.sub('* ', '')
+current_branch = current_branch[current_branch.rindex("/")+1 .. current_branch.length]
+
+newmessage = message.sub(/\[branchname\]/, current_branch)
+
+File.write(message_file, newmessage)
