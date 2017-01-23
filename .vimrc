@@ -54,9 +54,9 @@ if has('vim_starting')
 			let g:syntastic_check_on_open = 1
 			let g:syntastic_check_on_wq = 0
 			augroup HighlightTrailingSpaces
-				    autocmd!
-				        autocmd VimEnter,WinEnter,ColorScheme * highlight TrailingSpaces term=underline guibg=Red ctermbg=Red
-					    autocmd VimEnter,WinEnter * match TrailingSpaces /\s\+$/
-				    augroup END
+				autocmd!
+				autocmd VimEnter,WinEnter,ColorScheme * highlight TrailingSpaces term=underline guibg=Red ctermbg=Red
+					autocmd VimEnter,WinEnter * match TrailingSpaces /\s\+$/
+			augroup END
 			nnoremap O :<C-u>call append(expand('.'), '')<Cr>j
 
