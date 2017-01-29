@@ -1,3 +1,5 @@
-guifont=Sauce Code Powerline:h13
+set guifont=Source\ Code\ Pro\ for\ Powerline:h16 
+
+
 colorscheme dracula
 

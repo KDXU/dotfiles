@@ -59,4 +59,4 @@ if has('vim_starting')
 					autocmd VimEnter,WinEnter * match TrailingSpaces /\s\+$/
 			augroup END
 			nnoremap O :<C-u>call append(expand('.'), '')<Cr>j
-
+set noswapfile
