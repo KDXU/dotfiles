@@ -1,0 +1,11 @@
+# diff-highlight 
+set diff-highlight = true
+color  diff-header       default magenta
+color  diff-chunk        black   white
+# fetch
+bind generic F      ?git fetch
+bind main    F      ?git fetch
+# pull
+bind generic U      ?git pull
+# push
+bind generic P      ?git push -u %(remote) %(repo:head)
