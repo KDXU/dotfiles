@@ -6,8 +6,9 @@ set fish_theme agnoster
 set PATH $PATH /usr/local/bin /usr/bin /bin /usr/sbin /sbin /usr/local/share/dotnet
 set PATH $PATH $ANDROID_HOME/bin
 set PATH $PATH /usr/local/share/git-core/contrib/diff-highlight
-alias connectqb="sshfs medicmedia@153.122.24.92:. ~/mountpoint/medicmedia"
-alias unmountqb="diskutil unmount mountpoint/medicmedia"
+set PATH $PATH /usr/local/opt/go/libexec/bin
+set PATH $PATH /usr/local/share/git-core/contrib/diff-highlight
+alias vim="mvim"
 alias g="git"
 alias gd="git diff"
 alias gdc="git diff --cached"
