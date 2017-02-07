@@ -60,3 +60,7 @@ if has('vim_starting')
 			augroup END
 			nnoremap O :<C-u>call append(expand('.'), '')<Cr>j
 set noswapfile
+noremap <Up> <Nop>
+noremap <Down> <Nop>
+noremap <Left> <Nop>
+noremap <Right> <Nop>

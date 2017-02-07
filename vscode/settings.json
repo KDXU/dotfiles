@@ -1,0 +1,17 @@
+{
+    "editor.insertSpaces": true,
+    "editor.wordWrap": true,
+    "editor.renderIndentGuides": true,
+    "editor.renderWhitespace": "all",
+    "editor.renderControlCharacters": true,
+    "editor.formatOnSave": true,
+    "editor.codeLens": true,
+    "window.restoreFullscreen": true,
+    "editor.fontFamily": "Source Code Pro for Powerline",
+    "terminal.external.osxExec": "iTerm2.app",
+    "terminal.integrated.fontFamily": "Source Code Pro for Powerline",
+    "editor.fontSize": 12,
+    "trailing-spaces.saveAfterTrim": true,
+    "omnisharp.useMono": true,
+    "vim.useSolidBlockCursor": true
+}

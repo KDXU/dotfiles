@@ -38,4 +38,5 @@ brew "fish"
 # tmux
 brew "tmux"
 
-
+# vscode
+cask "visual-studio-code"
