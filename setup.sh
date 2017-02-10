@@ -10,10 +10,11 @@ mkdir .vim
 mkdir .config
 mkdir -p .git/hooks
 mkdir .config/fish
+mkdir .config/nvim
 
 curl https://raw.githubusercontent.com/Shougo/neobundle.vim/master/bin/install.sh > install.sh
 sh ./install.sh
-
+ln -snvf dotfiles/init.vim .config/nvim/init.vim
 ln -snvf dotfiles/.vimrc .vimrc
 ln -snvf dotfiles/.tmux.conf .tmux.conf
 ln -snvf dotfiles/.tigrc .tigrc

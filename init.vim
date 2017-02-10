@@ -10,7 +10,7 @@ if has('vim_starting')
 			call neobundle#begin(expand('~/.vim/bundle'))
 			let g:neobundle_default_git_protocol='https'
 			NeoBundleFetch 'Shougo/neobundle.vim'
-			NeoBundle 'Shougo/neocomplete.vim'
+			NeoBundle 'Shougo/deoplete.nvim'
 			NeoBundle 'pangloss/vim-javascript'
 			NeoBundleLazy 'OrangeT/vim-csharp', { 'autoload': { 'filetypes': [ 'cs', 'csi', 'csx' ] } }
 			NeoBundle 'osyo-manga/shabadou.vim'
@@ -69,3 +69,4 @@ noremap <Up> <Nop>
 noremap <Down> <Nop>
 noremap <Left> <Nop>
 noremap <Right> <Nop>
+

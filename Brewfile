@@ -38,5 +38,7 @@ brew "fish"
 # tmux
 brew "tmux"
 
+# vimr
+cask "vimr"
 # vscode
 cask "visual-studio-code"
