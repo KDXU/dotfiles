@@ -10,7 +10,9 @@ if has('vim_starting')
 			call neobundle#begin(expand('~/.vim/bundle'))
 			let g:neobundle_default_git_protocol='https'
 			NeoBundleFetch 'Shougo/neobundle.vim'
+			NeoBundle 'scrooloose/nerdtree'
 			NeoBundle 'Shougo/neocomplete.vim'
+			NeoBundle 'Shougo/unite.vim'
 			NeoBundle 'pangloss/vim-javascript'
 			NeoBundleLazy 'OrangeT/vim-csharp', { 'autoload': { 'filetypes': [ 'cs', 'csi', 'csx' ] } }
 			NeoBundle 'osyo-manga/shabadou.vim'
@@ -32,37 +34,40 @@ if has('vim_starting')
 			NeoBundle 'dracula/vim'
 			NeoBundleCheck
 			call neobundle#end()
-			filetype plugin indent on
-			set t_Co=256
-			syntax on
-			color dracula
-			set guifont=SauceCodePowerline-Regular:h14
-			set antialias
-			set statusline+=%#warningmsg#
-			set statusline+=%{SyntasticStatuslineFlag()}
-			set statusline+=%*
-			set encoding=utf-8
-			set fileencodings=iso-2022-jp,euc-jp,sjis,utf-8
-			set fileformats=unix,dos,mac
-			set listchars=tab:>-
-			set list
-			set number
-			nnoremap <silent><C-e> :NERDTreeToggle<CR>
-			let g:neocomplete#enable_at_startup=1
-			let g:syntastic_always_populate_loc_list = 1
-			let g:syntastic_auto_loc_list = 1
-			let g:syntastic_check_on_open = 1
-			let g:syntastic_check_on_wq = 0
-			augroup HighlightTrailingSpaces
-				autocmd!
-				autocmd VimEnter,WinEnter,ColorScheme * highlight TrailingSpaces term=underline guibg=Red ctermbg=Red
-					autocmd VimEnter,WinEnter * match TrailingSpaces /\s\+$/
-			augroup END
-			nnoremap O :<C-u>call append(expand('.'), '')<Cr>j
+filetype plugin indent on
+set t_Co=256
+syntax on
+color dracula
+set guifont=SauceCodePowerline-Regular:h14
+set antialias
+set encoding=utf8
+set fenc=utf-8
+set fileformats=unix,dos,mac
+set listchars=tab:>-
+set list
+set number
+nnoremap <silent><C-e> :NERDTreeToggle<CR>
+let g:neocomplete#enable_at_startup=1
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+augroup HighlightTrailingSpaces
+		autocmd!
+		autocmd VimEnter,WinEnter,ColorScheme * highlight TrailingSpaces term=underline guibg=Red ctermbg=Red
+		autocmd VimEnter,WinEnter * match TrailingSpaces /\s\+$/
+augroup END
+noremap O :<C-u>call append(expand('.'), '')<Cr>j
+
 
 if has("gui_vimr")
 set color dracula
 endif
+
+
+set expandtab
+set tabstop=4
+set shiftwidth=4
 
 set noswapfile
 noremap <Up> <Nop>
