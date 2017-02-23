@@ -12,6 +12,7 @@ if has('vim_starting')
 			NeoBundleFetch 'Shougo/neobundle.vim'
 			NeoBundle 'scrooloose/nerdtree'
 			NeoBundle 'Shougo/neocomplete.vim'
+            NeoBundle 'nathanaelkane/vim-indent-guides'
 			NeoBundle 'Shougo/unite.vim'
 			NeoBundle 'pangloss/vim-javascript'
 			NeoBundleLazy 'OrangeT/vim-csharp', { 'autoload': { 'filetypes': [ 'cs', 'csi', 'csx' ] } }
@@ -74,3 +75,4 @@ noremap <Up> <Nop>
 noremap <Down> <Nop>
 noremap <Left> <Nop>
 noremap <Right> <Nop>
+let g:indent_guides_enable_on_vim_startup = 1
