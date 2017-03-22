@@ -1,0 +1,64 @@
+[[plugins]]
+repo = 'Shougo/dein.vim'
+
+[[plugins]]
+repo = 'Shougo/vimproc.vim'
+build = 'make'
+
+[[plugins]]
+repo = 'Shougo/deoplete.nvim'
+on_i = 1
+
+[[plugins]]
+repo = 'Shougo/neomru.vim'
+on_path = '.*'
+
+[[plugins]]
+repo = 'Shougo/unite.vim'
+depends = 'neomru.vim'
+
+[[plugins]]
+repo = 'dracula/vim'
+
+[[plugins]]
+repo = 'tpope/vim-surround'
+
+[[plugins]]
+repo = 'cespare/vim-toml'
+
+[[plugins]]
+repo = 'elixir-lang/vim-elixir'
+
+[[plugins]]
+repo = 'pangloss/vim-javascript'
+
+[[plugins]]
+repo = 'vim-ruby/vim-ruby'
+
+[[plugins]]
+repo = 'Shougo/vimfiler.vim'
+
+[[plugins]]
+repo = 'scrooloose/syntastic'
+on_ft = ['python', 'javascript']
+
+[[plugins]]
+repo = 'vim-erlang/vim-erlang-runtime'
+[[plugins]]
+repo = 'vim-erlang/vim-erlang-omnicomplete'
+[[plugins]]
+repo = 'vim-erlang/vim-erlang-compiler'
+[[plugins]]
+repo = 'vim-erlang/vim-erlang-tags'
+
+[[plugins]]
+repo = 'nathanaelkane/vim-indent-guides'
+
+[[plugins]]
+repo = 'OrangeT/vim-csharp'
+
+[[plugins]]
+repo = 'OmniSharp/omnisharp-vim'
+
+[[plugins]]
+repo = 'fatih/vim-go'
