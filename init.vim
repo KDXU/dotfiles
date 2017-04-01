@@ -1,9 +1,12 @@
 if &compatible
   set nocompatible
 endif
-let s:dein_dir = expand('~/.config/nvim/dein')
+
+" dein.vim
+let s:dein_dir = expand('~/.vim/dein')
 let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
-execute 'set runtimepath^=' . s:dein_repo_dir
+execute 'set runtimepath^=' . s:dein_repo_direxecute 'set runtimepath^=' . s:dein_repo_dir
+
 call dein#begin(s:dein_dir)
     let s:toml = '~/.dein.toml'
     let s:lazy_toml = '~/.dein_lazy.toml'
@@ -17,7 +20,7 @@ endif
 filetype plugin indent on
 set t_Co=256
 syntax enable
-colorscheme dracula
+color dracula
 set statusline+=%#warningmsg#
 set statusline+=%*
 set encoding=utf-8
@@ -57,7 +60,6 @@ let g:vim_markdown_folding_disabled = 1
 
 " go
 let g:go_fmt_command = "goimports"
-
 
 " deoplete.vim
 let g:deoplete#enable_at_startup = 1
