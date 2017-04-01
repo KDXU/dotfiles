@@ -62,3 +62,6 @@ repo = 'OmniSharp/omnisharp-vim'
 
 [[plugins]]
 repo = 'fatih/vim-go'
+
+[[plugins]]
+repo = 'rizzatti/dash.vim'

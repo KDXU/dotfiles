@@ -1,11 +1,11 @@
-brew install git
-brew tap Homebrew/bundle
-brew bundle
+# brew install git
+# brew tap Homebrew/bundle
+# brew bundle
 
-brew install neovim/neovim/neovim
+# brew install neovim/neovim/neovim
 
 curl -L http://get.oh-my.fish | fish
-omf install agnoster
+omf install emoji-powerline
 
 cd ~
 mkdir .vim
@@ -20,7 +20,7 @@ mkdir -p ~/.vim/colors
 curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
 sh installer.sh ~/.config/nvim/dein
 
-ln -snvf dotfiles/nvimrc .vimrc
+ln -snvf dotfiles/init.vim .config/nvim/init.vim
 ln -snvf dotfiles/dein.toml .dein.toml
 
 ln -snvf dotfiles/.tmux.conf .tmux.conf
@@ -33,10 +33,10 @@ ln -snvf dotfiles/config.fish .config/fish/config.fish
 
 git config --global include.path ~/dotfiles/gitconfig
 
-git clone git@github.com:powerline/fonts.git
-cd fonts
-./install.sh
-cd ~
-git clone https://github.com/dracula/iterm.git
-cd iterm
-open Dracula.itermcolors
+# git clone git@github.com:powerline/fonts.git
+# cd fonts
+# ./install.sh
+# cd ~
+# git clone https://github.com/dracula/iterm.git
+# cd iterm
+# open Dracula.itermcolors

@@ -5,8 +5,7 @@ endif
 " dein.vim
 let s:dein_dir = expand('~/.vim/dein')
 let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
-execute 'set runtimepath^=' . s:dein_repo_direxecute 'set runtimepath^=' . s:dein_repo_dir
-
+execute 'set runtimepath^=' . s:dein_repo_dir
 call dein#begin(s:dein_dir)
     let s:toml = '~/.dein.toml'
     let s:lazy_toml = '~/.dein_lazy.toml'
@@ -14,15 +13,13 @@ call dein#begin(s:dein_dir)
 call dein#end()
 
 if dein#check_install()
-  call dein#install()
+    dein#install()
 endif
 
 filetype plugin indent on
 set t_Co=256
 syntax enable
-color dracula
-set statusline+=%#warningmsg#
-set statusline+=%*
+
 set encoding=utf-8
 set fileencodings=iso-2022-jp,euc-jp,sjis,utf-8
 set fileformats=unix,dos,mac
@@ -49,7 +46,6 @@ nnoremap O :<C-u>call append(expand('.'), '')<Cr>j
 
 set showtabline=2   " タブを常に表示
 set imdisable   " IMを無効化
-
 set expandtab
 set tabstop=4
 set shiftwidth=4
@@ -57,10 +53,14 @@ set shiftwidth=4
 set noswapfile
 let g:indent_guides_enable_on_vim_startup = 1
 let g:vim_markdown_folding_disabled = 1
-
-" go
 let g:go_fmt_command = "goimports"
 
 " deoplete.vim
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#enable_smart_case = 1
+
+let g:indent_guides_auto_colors = 0
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=#00aced ctermbg=3
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#305097 ctermbg=4
+
+color dracula
