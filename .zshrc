@@ -4,7 +4,7 @@ ZSH_THEME="cute-theme"
 
 source $ZSH/oh-my-zsh.sh
 
-BULLETTRAIN_PROMPT_CHAR="🐹 "
+BULLETTRAIN_PROMPT_CHAR="🐾 "
 
 source ~/.zplug/init.zsh
 zplug 'zsh-users/zsh-completions'
