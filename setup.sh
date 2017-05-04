@@ -2,16 +2,12 @@
 # brew tap Homebrew/bundle
 # brew bundle
 
-# brew install neovim/neovim/neovim
-
-curl -L http://get.oh-my.fish | fish
-omf install emoji-powerline
+brew install neovim/neovim/neovim
 
 cd ~
 mkdir .vim
 mkdir .config
 mkdir -p .git/hooks
-mkdir .config/fish
 
 ln -sv .config/nvim .vim
 mkdir -p ~/.vim/dein
@@ -29,7 +25,7 @@ ln -snvf dotfiles/.tigrc .tigrc
 
 ln -snvf dotfiles/hooks/commit-msg .git/hooks/commit-msg
 
-ln -snvf dotfiles/config.fish .config/fish/config.fish
+ln -snvf dotfiles/zshrc .zshrc
 
 git config --global include.path ~/dotfiles/gitconfig
 

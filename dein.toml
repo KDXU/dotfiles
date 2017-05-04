@@ -18,7 +18,7 @@ repo = 'Shougo/unite.vim'
 depends = 'neomru.vim'
 
 [[plugins]]
-repo = 'dracula/vim'
+repo = 'tomasr/molokai'
 
 [[plugins]]
 repo = 'tpope/vim-surround'
@@ -55,13 +55,22 @@ repo = 'vim-erlang/vim-erlang-tags'
 repo = 'nathanaelkane/vim-indent-guides'
 
 [[plugins]]
-repo = 'OrangeT/vim-csharp'
-
-[[plugins]]
-repo = 'OmniSharp/omnisharp-vim'
-
-[[plugins]]
 repo = 'fatih/vim-go'
 
 [[plugins]]
-repo = 'rizzatti/dash.vim'
+repo = 'slashmili/alchemist.vim'
+
+[[plugins]]
+repo = 'vim-airline/vim-airline'
+
+[[plugins]]
+repo = 'vim-airline/vim-airline-themes'
+
+[[plugins]]
+repo = 'ctrlpvim/ctrlp.vim'
+
+[[plugins]]
+repo = 'racer-rust/vim-racer'
+
+[[plugins]]
+repo = 'rust-lang/rust.vim'

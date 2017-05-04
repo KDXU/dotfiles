@@ -32,13 +32,11 @@ brew "sbt"
 brew "cabal-install"
 brew "haskell-stack"
 
-# fish
-brew "fish"
+# zsh
+brew "zsh"
 
 # tmux
 brew "tmux"
 
-# vimr
-cask "vimr"
 # vscode
 cask "visual-studio-code"
