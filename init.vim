@@ -55,9 +55,6 @@ autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
 nnoremap O :<C-u>call append(expand('.'), '')<Cr>j
 
-" indent_guides
-let g:indent_guides_enable_on_vim_startup = 1
-
 let g:vim_markdown_folding_disabled = 1
 
 " deoplete.vim
@@ -77,4 +74,3 @@ let g:ctrlp_custom_ignore = {
 let g:airline#extensions#tabline#enabled = 1
 
 nnoremap <silent><C-e> :VimFilerExplore -split -winwidth=30 -find -no-quit<Cr>
-
