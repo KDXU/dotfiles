@@ -32,8 +32,8 @@ set title
 set showtabline=2
 set cursorline
 set expandtab
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
 set noswapfile
 
 "日本語(マルチバイト文字)行の連結時には空白を入力しない。
