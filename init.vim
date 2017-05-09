@@ -18,8 +18,10 @@ filetype plugin indent on
 set t_Co=256
 syntax enable
 
-set background=dark
 colorscheme molokai
+set background=dark
+
+set mouse=a
 set encoding=utf-8
 set fileencodings=utf-8,sjis,euc-jp,iso-2022-jp
 set fileformats=unix,dos,mac
@@ -30,10 +32,10 @@ set number
 set autoindent
 set title
 set showtabline=2
+set shiftwidth=2
+set tabstop=2
 set cursorline
 set expandtab
-set tabstop=2
-set shiftwidth=2
 set noswapfile
 
 "日本語(マルチバイト文字)行の連結時には空白を入力しない。
