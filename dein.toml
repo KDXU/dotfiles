@@ -74,3 +74,21 @@ repo = 'racer-rust/vim-racer'
 
 [[plugins]]
 repo = 'rust-lang/rust.vim'
+
+[[plugins]]
+repo = 'OmniSharp/omnisharp-vim'
+build = 'xbuild server/OmniSharp.sln'
+on_ft = ['csharp']
+
+[[plugins]]
+repo = 'nvie/vim-flake8'
+on_ft = 'python'
+
+[[plugins]]
+repo = 'kballard/vim-swift'
+
+[[plugins]]
+repo = 'keith/swift.vim'
+
+[[plugins]]
+repo = 'udalov/kotlin-vim'
