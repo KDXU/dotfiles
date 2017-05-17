@@ -14,20 +14,20 @@ mkdir -p ~/.vim/dein
 mkdir -p ~/.vim/colors
 
 curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
-sh installer.sh ~/.config/nvim/dein
+sh installer.sh ~/.cache/dein
 
-ln -snvf dotfiles/init.vim .config/nvim/init.vim
+mkdir -p .git/hooks
+mkdir .config/fish
+mkdir .config
+mkdir -p .config/nvim/dein
+mkdir -p .config/nvim/colors
+
+ln -snvf dotfiles/nvimrc .config/nvim/init.vim
+ln -snvf dotfiles/nvimrc .vimrc
 ln -snvf dotfiles/dein.toml .dein.toml
-
-ln -snvf dotfiles/.tmux.conf .tmux.conf
-
-ln -snvf dotfiles/.tigrc .tigrc
-
-ln -snvf dotfiles/hooks/commit-msg .git/hooks/commit-msg
+git config --global include.path ~/dotfiles/gitconfig
 
 ln -snvf dotfiles/zshrc .zshrc
-
-git config --global include.path ~/dotfiles/gitconfig
 
 # git clone git@github.com:powerline/fonts.git
 # cd fonts

@@ -2,6 +2,9 @@
 repo = 'Shougo/dein.vim'
 
 [[plugins]]
+repo = 'ctrlpvim/ctrlp.vim'
+
+[[plugins]]
 repo = 'Shougo/vimproc.vim'
 build = 'make'
 
@@ -41,6 +44,10 @@ repo = 'Shougo/vimfiler.vim'
 [[plugins]]
 repo = 'scrooloose/syntastic'
 on_ft = ['python', 'javascript']
+
+[[plugins]]
+repo = 'Shougo/unite.vim'
+depends = 'neomru.vim'
 
 [[plugins]]
 repo = 'vim-erlang/vim-erlang-runtime'
@@ -92,3 +99,9 @@ repo = 'keith/swift.vim'
 
 [[plugins]]
 repo = 'udalov/kotlin-vim'
+
+[[plugins]]
+repo = 'Yggdroot/indentLine'
+
+[[plugins]]
+repo = 'neovimhaskell/haskell-vim'

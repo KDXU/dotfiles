@@ -6,6 +6,7 @@ endif
 let s:dein_dir = expand('~/.config/nvim/dein')
 let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
 execute 'set runtimepath^=' . s:dein_repo_dir
+
 call dein#begin(s:dein_dir)
     let s:toml = '~/.dein.toml'
     call dein#load_toml(s:toml,      {'lazy': 0})
@@ -29,6 +30,7 @@ set fileformats=unix,dos,mac
 set listchars=tab:»-,trail:-,extends:»,precedes:«,nbsp:%
 set showbreak=↪
 set list
+
 set number
 set autoindent
 set title
@@ -50,6 +52,25 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 1
 
+
+set showtabline=2
+set expandtab
+set tabstop=4
+set shiftwidth=4
+
+set noswapfile
+
+"syntastic
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+"Unite.vim
+let g:unite_enable_start_insert = 1
+let g:unite_enable_ignore_case = 1
+let g:unite_enable_smart_case = 1
+
 highlight ExtraWhitespace ctermbg=red guibg=#FA5882
 match ExtraWhitespace /\s\+$/
 autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
@@ -62,7 +83,7 @@ let g:vim_markdown_folding_disabled = 1
 
 " deoplete.vim
 let g:deoplete#enable_at_startup = 1
-
+let g:deoplete#max_list = 20
 " ctrlp.vim
 let g:ctrlp_cache_dir = $HOME.'/.cache/ctrlp'
 let g:ctrlp_clear_cache_on_exit = 0
@@ -77,3 +98,4 @@ let g:ctrlp_custom_ignore = {
 let g:airline#extensions#tabline#enabled = 1
 
 nnoremap <silent><C-e> :VimFilerExplore -split -winwidth=30 -find -no-quit<Cr>
+
