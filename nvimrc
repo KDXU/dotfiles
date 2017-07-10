@@ -40,6 +40,7 @@ set tabstop=2
 set cursorline
 set expandtab
 set noswapfile
+set clipboard=unnamed
 
 "日本語(マルチバイト文字)行の連結時には空白を入力しない。
 set formatoptions+=mM
@@ -51,14 +52,6 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 1
-
-
-set showtabline=2
-set expandtab
-set tabstop=4
-set shiftwidth=4
-
-set noswapfile
 
 "syntastic
 let g:syntastic_always_populate_loc_list = 1
@@ -95,7 +88,7 @@ let g:ctrlp_custom_ignore = {
   \ 'file': '\v\.(exe|so|dll)$',
   \ 'link': 'some_bad_symbolic_links',
   \}
+
 let g:airline#extensions#tabline#enabled = 1
 
 nnoremap <silent><C-e> :VimFilerExplore -split -winwidth=30 -find -no-quit<Cr>
-

@@ -17,22 +17,19 @@ curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh >
 sh installer.sh ~/.cache/dein
 
 mkdir -p .git/hooks
-mkdir .config/fish
 mkdir .config
 mkdir -p .config/nvim/dein
 mkdir -p .config/nvim/colors
 
-ln -snvf dotfiles/nvimrc .config/nvim/init.vim
+# シンボリックリンクだと nvim が認識してくれない
+rm .config/nvim/init.vim
+cp dotfiles/nvimrc .config/nvim/init.vim
+
 ln -snvf dotfiles/nvimrc .vimrc
+
 ln -snvf dotfiles/dein.toml .dein.toml
+
 git config --global include.path ~/dotfiles/gitconfig
 
 ln -snvf dotfiles/zshrc .zshrc
 
-# git clone git@github.com:powerline/fonts.git
-# cd fonts
-# ./install.sh
-# cd ~
-# git clone https://github.com/dracula/iterm.git
-# cd iterm
-# open Dracula.itermcolors

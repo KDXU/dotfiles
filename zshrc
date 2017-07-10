@@ -3,30 +3,40 @@ if [[ ! -d ~/.zplug ]];then
 fi
 
 source ~/.zplug/init.zsh
-
+export XDG_CONFIG_HOME=~/.config
 ### Virtualenvwrapper
 if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
   export WORKON_HOME=$HOME/.virtualenvs
   source /usr/local/bin/virtualenvwrapper.sh
 fi
 
-# enhancd config
-export ENHANCD_COMMAND=ed
-export ENHANCD_FILTER=ENHANCD_FILTER=fzy:fzf:peco
+export ENHANCED_COMMAND=ed
+export ENHANCED_FILTER=ENHANCED_FILTER=fzy:fzf:peco
 
-# Vanilla shell
-zplug "yous/vanilli.sh"
-zplug "yous/lime"
+autoload colors && colors
+setopt prompt_subst
+
+zplug "junegunn/fzf-bin", \
+    from:gh-r, \
+    as:command, \
+    rename-to:fzf, \
+    use:"*darwin*amd64*"
+
+zplug 'yous/vanilli.sh'
 zplug 'zsh-users/zsh-completions'
-zplug 'zsh-users/zsh-autosuggestions'
 zplug 'zsh-users/zaw'
 zplug "plugins/git",   from:oh-my-zsh
-zplug "plugins/colorize", from:oh-my-zsh
-zplug 'plugins/osx', from:oh-my-zsh, if:"[[ $OSTYPE == *darwin* ]]"
+zplug 'themes/sorin', from:oh-my-zsh, defer:0
 zplug 'zsh-users/zsh-syntax-highlighting', defer:2
-zplug "zsh-users/zsh-history-substring-search", nice:10
+zplug "zsh-users/zsh-history-substring-search"
 zplug "rupa/z", use:"*.sh"
+zplug "lib/theme-and-appearance", from:oh-my-zsh
 zplug "b4b4r07/enhancd", use:init.sh
+zplug "mollifier/anyframe"
+zplug "mollifier/cd-gitroot"
+zplug "docker/compose", use:contrib/completion/zsh
+zplug "modules/tmux",       from:prezto
+
 
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
@@ -36,22 +46,24 @@ if ! zplug check --verbose; then
     fi
   fi
 
-autoload -Uz chpwd_recent_dirs cdr add-zsh-hook is-at-least
-if is-at-least 4.3.10; then
-add-zsh-hook chpwd chpwd_recent_dirs
-zstyle ':chpwd:*' recent-dirs-max 5000
-zstyle ':chpwd:*' recent-dirs-default yes
-zstyle ':completion:*:default' menu select=2
-fi
-
+# Then, source plugins and add commands to $PATH
 zplug load
+
+export CLICOLOR=1
+
+export LIME_DIR_DISPLAY_COMPONENTS=2
 
 HISTFILE=~/.zsh_historyx
 HISTSIZE=10000
 SAVEHIST=10000
 
+# Better history searching with arrow keys
+if zplug check "zsh-users/zsh-history-substring-search"; then
+    bindkey "$terminfo[kcuu1]" history-substring-search-up
+    bindkey "$terminfo[kcud1]" history-substring-search-down
+fi
+
 setopt no_beep  # 補完候補がないときなどにビープ音を鳴らさない。
-setopt transient_rprompt  # コマンド実行後は右プロンプトを消す
 setopt hist_ignore_dups   # 直前と同じコマンドラインはヒストリに追加しない
 setopt hist_ignore_all_dups  # 重複したヒストリは追加しない
 setopt hist_reduce_blanks
@@ -78,17 +90,18 @@ setopt glob_complete  # globを展開しないで候補の一覧から補完す�
 setopt extended_glob  # 拡張globを有効にする。
 setopt mark_dirs   # globでパスを生成したときに、パスがディレクトリだったら最後に「/」をつける。
 
-export CLICOLOR=1
-
+# aliases
+alias la='ls -a'
 alias mkdir='mkdir -p'
-alias vim='nvim'
 alias tis='tig status'
 alias so='source'
-alias icloud='cd ~/Library/Mobile\ Documents/com~apple~CloudDocs/'
-[[ -s "$HOME/.kiex/scripts/kiex" ]] && source $HOME/.kiex/scripts/kiex.bash
+alias vim='nvim'
 
+# rbenv
+if [ -e "$HOME/.rbenv" ]; then
+  eval "$(rbenv init - zsh)"
+fi
+# kiex
+[[ -s "$HOME/.kiex/scripts/kiex" ]] && source $HOME/.kiex/scripts/kiex.bash
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/geru/work/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/geru/work/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/geru/work/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/geru/work/google-cloud-sdk/completion.zsh.inc'; fi
