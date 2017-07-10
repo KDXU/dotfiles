@@ -1,21 +1,40 @@
-export ZSH=$HOME/.oh-my-zsh
+if [[ ! -d ~/.zplug ]];then
+  git clone https://github.com/zplug/zplug ~/.zplug
+fi
 
-ZSH_THEME="af-magic"
+source ~/.zplug/init.zsh
 
-source $ZSH/oh-my-zsh.sh
-export ZPLUG_HOME=/usr/local/opt/zplug
-source $ZPLUG_HOME/init.zsh
+### Virtualenvwrapper
+if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
+  export WORKON_HOME=$HOME/.virtualenvs
+  source /usr/local/bin/virtualenvwrapper.sh
+fi
 
+# enhancd config
+export ENHANCD_COMMAND=ed
+export ENHANCD_FILTER=ENHANCD_FILTER=fzy:fzf:peco
+
+# Vanilla shell
+zplug "yous/vanilli.sh"
+zplug "yous/lime"
 zplug 'zsh-users/zsh-completions'
 zplug 'zsh-users/zsh-autosuggestions'
 zplug 'zsh-users/zaw'
-zplug 'zsh-users/zsh-syntax-highlighting', defer:2
-zplug "b4b4r07/httpstat", \
-    as:command, \
-    use:'(*).sh', \
-    rename-to:'$1'
 zplug "plugins/git",   from:oh-my-zsh
-zplug check || zplug install
+zplug "plugins/colorize", from:oh-my-zsh
+zplug 'plugins/osx', from:oh-my-zsh, if:"[[ $OSTYPE == *darwin* ]]"
+zplug 'zsh-users/zsh-syntax-highlighting', defer:2
+zplug "zsh-users/zsh-history-substring-search", nice:10
+zplug "rupa/z", use:"*.sh"
+zplug "b4b4r07/enhancd", use:init.sh
+
+# Install plugins if there are plugins that have not been installed
+if ! zplug check --verbose; then
+    printf "Install? [y/N]: "
+    if read -q; then
+        echo; zplug install
+    fi
+  fi
 
 autoload -Uz chpwd_recent_dirs cdr add-zsh-hook is-at-least
 if is-at-least 4.3.10; then
@@ -59,34 +78,17 @@ setopt glob_complete  # globを展開しないで候補の一覧から補完す�
 setopt extended_glob  # 拡張globを有効にする。
 setopt mark_dirs   # globでパスを生成したときに、パスがディレクトリだったら最後に「/」をつける。
 
+export CLICOLOR=1
 
-function zaw-src-gitdir () {
-    _dir=$(git rev-parse --show-cdup 2>/dev/null)
-    if [ $? -eq 0 ]
-    then
-        candidates=( $(git ls-files ${_dir} | perl -MFile::Basename -nle \
-                                                   '$a{dirname $_}++; END{delete $a{"."}; print for sort keys %a}') )
-    fi
-
-    actions=("zaw-src-gitdir-cd")
-    act_descriptions=("change directory in git repos")
-}
-
-function zaw-src-gitdir-cd () {
-    BUFFER="cd $1"
-    zle accept-line
-}
-
-zaw-register-src -n gitdir zaw-src-gitdir
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/kyoko.kadowaki/work/google-cloud-sdk/work/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/kyoko.kadowaki/work/google-cloud-sdk/work/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/kyoko.kadowaki/work/google-cloud-sdk/work/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/kyoko.kadowaki/work/google-cloud-sdk/work/google-cloud-sdk/completion.zsh.inc'; fi
-
-alias vim=nvim
 alias mkdir='mkdir -p'
+alias vim='nvim'
 alias tis='tig status'
 alias so='source'
 alias icloud='cd ~/Library/Mobile\ Documents/com~apple~CloudDocs/'
+[[ -s "$HOME/.kiex/scripts/kiex" ]] && source $HOME/.kiex/scripts/kiex.bash
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/geru/work/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/geru/work/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/geru/work/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/geru/work/google-cloud-sdk/completion.zsh.inc'; fi
