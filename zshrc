@@ -101,6 +101,10 @@ alias vim='nvim'
 if [ -e "$HOME/.rbenv" ]; then
   eval "$(rbenv init - zsh)"
 fi
+
+# rust
+source $HOME/.cargo/env
+
 # kiex
 [[ -s "$HOME/.kiex/scripts/kiex" ]] && source $HOME/.kiex/scripts/kiex.bash
 # The next line updates PATH for the Google Cloud SDK.
