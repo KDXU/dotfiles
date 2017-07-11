@@ -21,7 +21,6 @@ set t_Co=256
 syntax enable
 
 colorscheme molokai
-set background=dark
 
 set mouse=a
 set encoding=utf-8
@@ -30,6 +29,9 @@ set fileformats=unix,dos,mac
 set listchars=tab:»-,trail:-,extends:»,precedes:«,nbsp:%
 set showbreak=↪
 set list
+
+"日本語(マルチバイト文字)行の連結時には空白を入力しない。
+set formatoptions+=mM
 
 set number
 set autoindent
@@ -42,11 +44,6 @@ set expandtab
 set noswapfile
 set clipboard=unnamed
 
-"日本語(マルチバイト文字)行の連結時には空白を入力しない。
-set formatoptions+=mM
-
-"□や○の文字があってもカーソル位置がずれないようにする。
-set ambiwidth=double
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
@@ -89,6 +86,8 @@ let g:ctrlp_custom_ignore = {
   \ 'link': 'some_bad_symbolic_links',
   \}
 
+let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
+let g:airline_theme='bubblegum'
 
 nnoremap <silent><C-e> :VimFilerExplore -split -winwidth=30 -find -no-quit<Cr>
