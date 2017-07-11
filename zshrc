@@ -105,7 +105,9 @@ fi
 # rust
 source $HOME/.cargo/env
 
+#kerl
+eval ". $HOME/kerl19/activate"
 # kiex
 [[ -s "$HOME/.kiex/scripts/kiex" ]] && source $HOME/.kiex/scripts/kiex.bash
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/geru/work/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/geru/work/google-cloud-sdk/path.zsh.inc'; fi
+if [ -f "$HOME/work/google-cloud-sdk/path.zsh.inc" ]; then source "$HOME/work/google-cloud-sdk/path.zsh.inc"; fi

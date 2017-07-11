@@ -99,3 +99,6 @@ repo = 'Shougo/neosnippet'
 
 [[plugins]]
 repo = 'Shougo/neosnippet-snippets'
+
+[[plugins]]
+repo = 'hashivim/vim-terraform.git'
