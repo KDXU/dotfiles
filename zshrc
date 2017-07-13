@@ -90,6 +90,10 @@ setopt glob_complete  # globを展開しないで候補の一覧から補完す�
 setopt extended_glob  # 拡張globを有効にする。
 setopt mark_dirs   # globでパスを生成したときに、パスがディレクトリだったら最後に「/」をつける。
 
+
+#key binding
+bindkey '^Z' beginning-of-line
+
 # aliases
 alias la='ls -a'
 alias mkdir='mkdir -p'

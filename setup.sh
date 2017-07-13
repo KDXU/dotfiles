@@ -1,8 +1,9 @@
 # brew install git
 # brew tap Homebrew/bundle
 # brew bundle
-
-brew install neovim/neovim/neovim
+if ! [ -x "$(command -v nvim)" ]; then
+  brew install neovim/neovim/neovim
+fi
 
 cd ~
 mkdir .vim
@@ -19,6 +20,10 @@ sh installer.sh ~/.cache/dein
 
 if ! [ -x "$(command -v kiex)" ]; then
   curl -sSL https://raw.githubusercontent.com/taylor/kiex/master/install | zsh -s
+fi
+
+if [ -d "$HOME/custom" ]; then
+  git clone git@github.com:kdxu/my-shell-scripts.git custom
 fi
 
 mkdir -p .git/hooks
