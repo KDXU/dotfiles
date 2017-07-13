@@ -15,9 +15,6 @@ brew "ruby"
 # android
 brew "android-sdk"
 
-# elixir
-brew "elixir"
-
 # docker
 brew "docker"
 
@@ -38,5 +35,11 @@ brew "zsh"
 # tmux
 brew "tmux"
 
+# figlet
+brew "figlet"
+
 # vscode
 cask "visual-studio-code"
+
+# kerl
+brew "kerl"

@@ -16,6 +16,11 @@ mkdir -p ~/.vim/colors
 curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
 sh installer.sh ~/.cache/dein
 
+
+if ! [ -x "$(command -v kiex)" ]; then
+  curl -sSL https://raw.githubusercontent.com/taylor/kiex/master/install | zsh -s
+fi
+
 mkdir -p .git/hooks
 mkdir .config
 mkdir -p .config/nvim/dein
@@ -32,4 +37,5 @@ ln -snvf dotfiles/dein.toml .dein.toml
 git config --global include.path ~/dotfiles/gitconfig
 
 ln -snvf dotfiles/zshrc .zshrc
+ln -snvf dotfiles/zshenv .zshenv
 
