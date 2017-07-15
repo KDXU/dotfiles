@@ -108,7 +108,7 @@ if [ -e "$HOME/.rbenv" ]; then
 fi
 
 # rust
-source $HOME/.cargo/env
+source $HOME/.cargo/bin
 
 #kerl
 eval ". $HOME/kerl19/activate"

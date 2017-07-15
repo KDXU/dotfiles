@@ -44,6 +44,7 @@ set expandtab
 set noswapfile
 set clipboard=unnamed
 
+highlight Normal ctermbg=NONE
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
