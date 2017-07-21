@@ -102,3 +102,6 @@ repo = 'Shougo/neosnippet-snippets'
 
 [[plugins]]
 repo = 'hashivim/vim-terraform.git'
+
+[[plugins]]
+repo = 'rizzatti/dash.vim'

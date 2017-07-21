@@ -21,10 +21,6 @@ brew "docker"
 # mono
 brew "mono"
 
-# sbt
-cask "java"
-brew "sbt"
-
 # haskell
 brew "cabal-install"
 brew "haskell-stack"
@@ -43,3 +39,6 @@ cask "visual-studio-code"
 
 # kerl
 brew "kerl"
+
+# slack
+cask "slack"
