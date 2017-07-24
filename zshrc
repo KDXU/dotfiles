@@ -92,6 +92,7 @@ setopt mark_dirs   # globでパスを生成したときに、パスがディレ�
 
 
 #key binding
+bindkey -r '^A'
 bindkey '^Z' beginning-of-line
 
 # aliases
@@ -120,6 +121,9 @@ eval ". $HOME/kerl19/activate"
 [[ -s "$HOME/.kiex/scripts/kiex" ]] && source $HOME/.kiex/scripts/kiex.bash
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f "$HOME/work/google-cloud-sdk/path.zsh.inc" ]; then source "$HOME/work/google-cloud-sdk/path.zsh.inc"; fi
+
+# go
+[[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
 
 
 function is_exists() { type "$1" >/dev/null 2>&1; return $?; }

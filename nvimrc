@@ -46,10 +46,13 @@ set clipboard=unnamed
 
 highlight Normal ctermbg=NONE
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 1
+highlight ExtraWhitespace ctermbg=red guibg=#FA5882
+match ExtraWhitespace /\s\+$/
+autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+autocmd BufWinLeave * call clearmatches()
+nnoremap O :<C-u>call append(expand('.'), '')<Cr>j
 
 "syntastic
 let g:syntastic_always_populate_loc_list = 1
@@ -61,37 +64,64 @@ let g:syntastic_check_on_wq = 0
 let g:unite_enable_start_insert = 1
 let g:unite_enable_ignore_case = 1
 let g:unite_enable_smart_case = 1
+let g:unite_source_file_mru_limit = 50
 
-highlight ExtraWhitespace ctermbg=red guibg=#FA5882
-match ExtraWhitespace /\s\+$/
-autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
-autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
-autocmd InsertLeave * match ExtraWhitespace /\s\+$/
-autocmd BufWinLeave * call clearmatches()
-nnoremap O :<C-u>call append(expand('.'), '')<Cr>j
+"keymapping
+nnoremap [unite] <Nop>
+nmap , [unite]
 
+nnoremap <silent> [unite]c   :<C-u>UniteWithCurrentDir -buffer-name=files file<CR>
+nnoremap <silent> [unite]b   :<C-u>Unite buffer<CR>
 let g:vim_markdown_folding_disabled = 1
 
 " deoplete.vim
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#max_list = 20
-" ctrlp.vim
-let g:ctrlp_cache_dir = $HOME.'/.cache/ctrlp'
-let g:ctrlp_clear_cache_on_exit = 0
-let g:ctrlp_lazy_update = 1
-let g:ctrlp_root_markers = ['mix.exs', 'Gemfile', 'pom.xml', 'build.xml']
-let g:ctrlp_max_height = 20
-let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
-  \ 'file': '\v\.(exe|so|dll)$',
-  \ 'link': 'some_bad_symbolic_links',
-  \}
 
-let g:ctrlp_prompt_mappings = {
-  \ 'AcceptSelection("t")': ['Enter'],
-\ }
+" Anywhere SID.
+function! s:SID_PREFIX()
+  return matchstr(expand('<sfile>'), '<SNR>\d\+_\zeSID_PREFIX$')
+endfunction
 
+" Set tabline.
+function! s:my_tabline()  "{{{
+  let s = ''
+  for i in range(1, tabpagenr('$'))
+    let bufnrs = tabpagebuflist(i)
+    let bufnr = bufnrs[tabpagewinnr(i) - 1]  " first window, first appears
+    let no = i  " display 0-origin tabpagenr.
+    let mod = getbufvar(bufnr, '&modified') ? '!' : ' '
+    let title = fnamemodify(bufname(bufnr), ':t')
+    let title = '[' . title . ']'
+    let s .= '%'.i.'T'
+    let s .= '%#' . (i == tabpagenr() ? 'TabLineSel' : 'TabLine') . '#'
+    let s .= no . ':' . title
+    let s .= mod
+    let s .= '%#TabLineFill# '
+  endfor
+  let s .= '%#TabLineFill#%T%=%#TabLine#'
+  return s
+endfunction "}}}
+let &tabline = '%!'. s:SID_PREFIX() . 'my_tabline()'
+set showtabline=2 " 常にタブラインを表示
 
-let g:airline_powerline_fonts = 1
-let g:airline#extensions#tabline#enabled = 1
-let g:airline_theme='bubblegum'
+" The prefix key.
+nnoremap    [Tag]   <Nop>
+nmap    t [Tag]
+" Tab jump
+for n in range(1, 9)
+  execute 'nnoremap <silent> [Tag]'.n  ':<C-u>tabnext'.n.'<CR>'
+endfor
+" t1 で1番左のタブ、t2 で1番左から2番目のタブにジャンプ
+
+map <silent> [Tag]c :tablast <bar> tabnew<CR>
+" tc 新しいタブを一番右に作る
+map <silent> [Tag]x :tabclose<CR>
+" tx タブを閉じる
+map <silent> [Tag]n :tabnext<CR>
+" tn 次のタブ
+map <silent> [Tag]p :tabprevious<CR>
+" tp 前のタブ
+"
+" tig
+nnoremap tig :<C-u>w<CR>:te tig<CR>
