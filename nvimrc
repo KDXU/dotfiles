@@ -87,8 +87,11 @@ let g:ctrlp_custom_ignore = {
   \ 'link': 'some_bad_symbolic_links',
   \}
 
+let g:ctrlp_prompt_mappings = {
+  \ 'AcceptSelection("t")': ['Enter'],
+\ }
+
+
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_theme='bubblegum'
-
-nnoremap <silent><C-e> :VimFilerExplore -split -winwidth=30 -find -no-quit<Cr>
