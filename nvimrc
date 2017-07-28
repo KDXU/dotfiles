@@ -124,4 +124,4 @@ map <silent> [Tag]p :tabprevious<CR>
 " tp 前のタブ
 "
 " tig
-nnoremap tig :<C-u>w<CR>:te tig<CR>
+nnoremap tig :<C-u>w<CR>:te tig status<CR>

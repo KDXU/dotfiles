@@ -6,9 +6,7 @@ zsh
 ----
 
 :"^Z": beginning-of-line
-:“^E”": end-of-line
-:"^['": quote-line
-:"^[-": neg-argument
+:“^E": end-of-line
 :"^[B": backward-word
 :"^[C": capitalize-word
 :"^[D": kill-word
@@ -50,4 +48,5 @@ vim
 :tn: 次のタブ
 :tp: 前のタブ
 :r: 一文字置換
+:\:noh: ハイライト削除
 
