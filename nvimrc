@@ -20,7 +20,7 @@ filetype plugin indent on
 set t_Co=256
 syntax enable
 
-colorscheme molokai
+colorscheme seti
 
 set mouse=a
 set encoding=utf-8

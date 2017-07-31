@@ -96,3 +96,12 @@ repo = 'hashivim/vim-terraform.git'
 
 [[plugins]]
 repo = 'rizzatti/dash.vim'
+
+[[plugins]]
+repo = 'trusktr/seti.vim'
+
+[[plugins]]
+repo = 'vim-airline/vim-airline'
+
+[[plugins]]
+repo = 'vim-airline/vim-airline-themes'
