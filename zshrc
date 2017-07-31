@@ -22,6 +22,7 @@ zplug "junegunn/fzf-bin", \
     rename-to:fzf, \
     use:"*darwin*amd64*"
 
+zplug "bhilburn/powerlevel9k", use:powerlevel9k.zsh-theme
 zplug 'yous/vanilli.sh'
 zplug 'zsh-users/zsh-completions'
 zplug 'zsh-users/zaw'
@@ -37,7 +38,10 @@ zplug "mollifier/cd-gitroot"
 zplug "docker/compose", use:contrib/completion/zsh
 zplug "modules/tmux",       from:prezto
 
-
+# https://github.com/gabrielelana/awesome-terminal-fonts/tree/patching-strategy/patched
+POWERLEVEL9K_MODE='awesome-patched'
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir rbenv vcs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(context os_icon)
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
     printf "Install? [y/N]: "
@@ -111,6 +115,10 @@ alias mixt='mix test'
 if [ -e "$HOME/.rbenv" ]; then
   eval "$(rbenv init - zsh)"
 fi
+
+# powerline
+# required pip3 install powertline-status
+source $HOME/Library/Python/3.6/lib/python/site-packages/powerline/bindings/zsh/powerline.zsh
 
 # rust
 source $HOME/.cargo/bin

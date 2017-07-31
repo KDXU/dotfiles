@@ -43,4 +43,4 @@ git config --global include.path ~/dotfiles/gitconfig
 
 ln -snvf dotfiles/zshrc .zshrc
 ln -snvf dotfiles/zshenv .zshenv
-
+pip3 install poweline-config

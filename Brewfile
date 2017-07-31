@@ -1,5 +1,9 @@
 # Brewfile
 
+# python3
+
+brew "python3"
+
 # openssl
 brew "openssl"
 
