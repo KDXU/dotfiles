@@ -10,12 +10,20 @@ repo = 'Shougo/deoplete.nvim'
 on_i = 1
 
 [[plugins]]
+repo = 'Shougo/denite.nvim'
+on_cmd = 'Denite'
+hook_source = 'source ~/.config/nvim/userautoload/plugins/plugins-denite.vim'
+
+[[plugins]]
 repo = 'Shougo/neomru.vim'
 on_path = '.*'
 
 [[plugins]]
 repo = 'Shougo/unite.vim'
 depends = 'neomru.vim'
+
+[[plugins]]
+repo = 'Shougo/vimfiler.vim'
 
 [[plugins]]
 repo = 'tomasr/molokai'
@@ -36,15 +44,8 @@ repo = 'pangloss/vim-javascript'
 repo = 'vim-ruby/vim-ruby'
 
 [[plugins]]
-repo = 'Shougo/vimfiler.vim'
-
-[[plugins]]
 repo = 'scrooloose/syntastic'
 on_ft = ['python', 'javascript']
-
-[[plugins]]
-repo = 'Shougo/unite.vim'
-depends = 'neomru.vim'
 
 [[plugins]]
 repo = 'vim-erlang/vim-erlang-runtime'

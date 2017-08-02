@@ -20,7 +20,7 @@ filetype plugin indent on
 set t_Co=256
 syntax enable
 
-colorscheme seti
+colorscheme molokai
 
 set mouse=a
 set encoding=utf-8
@@ -60,18 +60,9 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
-"Unite.vim
-let g:unite_enable_start_insert = 1
-let g:unite_enable_ignore_case = 1
-let g:unite_enable_smart_case = 1
-let g:unite_source_file_mru_limit = 50
+" denite.nvim
+nnoremap <silent> <C-p> :<C-u>Denite file_rec<CR>
 
-"keymapping
-nnoremap [unite] <Nop>
-nmap , [unite]
-
-nnoremap <silent> [unite]c   :<C-u>UniteWithCurrentDir -buffer-name=files file<CR>
-nnoremap <silent> [unite]b   :<C-u>Unite buffer<CR>
 let g:vim_markdown_folding_disabled = 1
 
 " deoplete.vim
@@ -125,3 +116,16 @@ map <silent> [Tag]p :tabprevious<CR>
 "
 " tig
 nnoremap tig :<C-u>w<CR>:te tig status<CR>
+
+" airline
+let g:airline_powerline_fonts = 1
+let g:airline_theme='hybrid'
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#left_sep = ' '
+
+
+" vimfiler
+let g:vimfiler_as_default_explorer = 1
+let g:vimfiler_safe_mode_by_default = 0
+noremap ;; :VimFiler -split -simple -winwidth=35 -no-quit<ENTER>
+

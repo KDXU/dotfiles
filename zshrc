@@ -41,7 +41,7 @@ zplug "modules/tmux",       from:prezto
 # https://github.com/gabrielelana/awesome-terminal-fonts/tree/patching-strategy/patched
 POWERLEVEL9K_MODE='awesome-patched'
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir rbenv vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(context os_icon)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(os_icon)
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
     printf "Install? [y/N]: "
