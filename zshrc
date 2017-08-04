@@ -1,3 +1,4 @@
+export TERM="xterm-256color"
 if [[ ! -d ~/.zplug ]];then
   git clone https://github.com/zplug/zplug ~/.zplug
 fi
@@ -38,10 +39,6 @@ zplug "mollifier/cd-gitroot"
 zplug "docker/compose", use:contrib/completion/zsh
 zplug "modules/tmux",       from:prezto
 
-# https://github.com/gabrielelana/awesome-terminal-fonts/tree/patching-strategy/patched
-POWERLEVEL9K_MODE='awesome-patched'
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir rbenv vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(os_icon)
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
     printf "Install? [y/N]: "
@@ -54,8 +51,6 @@ if ! zplug check --verbose; then
 zplug load
 
 export CLICOLOR=1
-
-export LIME_DIR_DISPLAY_COMPONENTS=2
 
 HISTFILE=~/.zsh_historyx
 HISTSIZE=10000
@@ -116,16 +111,10 @@ if [ -e "$HOME/.rbenv" ]; then
   eval "$(rbenv init - zsh)"
 fi
 
-# powerline
-# required pip3 install powertline-status
-source /usr/local/lib/python3.6/site-packages/powerline/bindings/zsh/powerline.zsh
-
-
 # rust
 source $HOME/.cargo/bin
 
 #kerl
-eval ". $HOME/kerl19/activate"
 # kiex
 [[ -s "$HOME/.kiex/scripts/kiex" ]] && source $HOME/.kiex/scripts/kiex.bash
 # The next line updates PATH for the Google Cloud SDK.
@@ -157,7 +146,7 @@ function tmux_automatically_attach_session()
           echo $(eval "tmux -V")
         elif is_screen_running; then
             echo "This is on screen."
-        fi
+          fi
     else
         if shell_has_started_interactively && ! is_ssh_running; then
             if ! is_exists 'tmux'; then

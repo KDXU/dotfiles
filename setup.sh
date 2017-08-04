@@ -1,7 +1,8 @@
-# brew install git
-# brew tap Homebrew/bundle
-# brew bundle
+brew install git
+brew tap Homebrew/bundle
+brew bundle
 if ! [ -x "$(command -v nvim)" ]; then
+  pip install neovim
   brew install neovim/neovim/neovim
 fi
 
@@ -17,6 +18,7 @@ mkdir -p ~/.vim/colors
 curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
 sh installer.sh ~/.cache/dein
 
+curl https://sh.rustup.rs -sSf | sh
 
 if ! [ -x "$(command -v kiex)" ]; then
   curl -sSL https://raw.githubusercontent.com/taylor/kiex/master/install | zsh -s
