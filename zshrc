@@ -118,7 +118,8 @@ fi
 
 # powerline
 # required pip3 install powertline-status
-source $HOME/Library/Python/3.6/lib/python/site-packages/powerline/bindings/zsh/powerline.zsh
+source /usr/local/lib/python3.6/site-packages/powerline/bindings/zsh/powerline.zsh
+
 
 # rust
 source $HOME/.cargo/bin
