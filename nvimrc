@@ -20,7 +20,9 @@ filetype plugin indent on
 set t_Co=256
 syntax enable
 
-colorscheme molokai
+let g:hybrid_use_iTerm_colors = 1
+
+colorscheme darkblue
 
 set mouse=a
 set encoding=utf-8
@@ -32,7 +34,6 @@ set list
 
 "日本語(マルチバイト文字)行の連結時には空白を入力しない。
 set formatoptions+=mM
-
 set number
 set autoindent
 set title
@@ -46,7 +47,7 @@ set clipboard=unnamed
 
 highlight Normal ctermbg=NONE
 
-highlight ExtraWhitespace ctermbg=red guibg=#FA5882
+highlight ExtraWhitespace ctermbg=red guibg=#cccccc
 match ExtraWhitespace /\s\+$/
 autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
 autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
@@ -62,7 +63,14 @@ let g:syntastic_check_on_wq = 0
 
 " denite.nvim
 nnoremap <silent> <C-p> :<C-u>Denite file_rec<CR>
-
+" customize ignore globs
+call denite#custom#source('file_rec', 'matchers', ['matcher_fuzzy','matcher_ignore_globs'])
+call denite#custom#filter('matcher_ignore_globs', 'ignore_globs',
+      \ [
+      \ '.git/', '_build/', '__pycache__/',
+      \ 'images/', '*.o', '*.make',
+      \ '*.min.*', 'deps/',
+      \ 'img/', 'fonts/'])
 let g:vim_markdown_folding_disabled = 1
 
 " deoplete.vim
@@ -117,15 +125,10 @@ map <silent> [Tag]p :tabprevious<CR>
 " tig
 nnoremap tig :<C-u>w<CR>:te tig status<CR>
 
-" airline
-let g:airline_powerline_fonts = 1
-let g:airline_theme='hybrid'
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#left_sep = ' '
-
 
 " vimfiler
 let g:vimfiler_as_default_explorer = 1
 let g:vimfiler_safe_mode_by_default = 0
 noremap ;; :VimFiler -split -simple -winwidth=35 -no-quit<ENTER>
-
+let g:vimfiler_enable_auto_cd = 1
+autocmd FileType vimfiler nmap <buffer> <CR> <Plug>(vimfiler_expand_or_edit)

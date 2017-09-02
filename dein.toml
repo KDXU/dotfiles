@@ -26,7 +26,7 @@ depends = 'neomru.vim'
 repo = 'Shougo/vimfiler.vim'
 
 [[plugins]]
-repo = 'tomasr/molokai'
+repo = 'w0ng/vim-hybrid'
 
 [[plugins]]
 repo = 'tpope/vim-surround'
@@ -45,7 +45,7 @@ repo = 'vim-ruby/vim-ruby'
 
 [[plugins]]
 repo = 'scrooloose/syntastic'
-on_ft = ['python', 'javascript']
+on_ft = ['python', 'javascript', 'elixir']
 
 [[plugins]]
 repo = 'vim-erlang/vim-erlang-runtime'
@@ -63,9 +63,6 @@ repo = 'Yggdroot/indentLine'
 
 [[plugins]]
 repo = 'fatih/vim-go'
-
-[[plugins]]
-repo = 'ctrlpvim/ctrlp.vim'
 
 [[plugins]]
 repo = 'racer-rust/vim-racer'
@@ -100,9 +97,3 @@ repo = 'rizzatti/dash.vim'
 
 [[plugins]]
 repo = 'trusktr/seti.vim'
-
-[[plugins]]
-repo = 'vim-airline/vim-airline'
-
-[[plugins]]
-repo = 'vim-airline/vim-airline-themes'

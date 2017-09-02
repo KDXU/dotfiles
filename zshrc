@@ -1,4 +1,5 @@
 export TERM="xterm-256color"
+
 if [[ ! -d ~/.zplug ]];then
   git clone https://github.com/zplug/zplug ~/.zplug
 fi
@@ -6,11 +7,6 @@ fi
 source ~/.zplug/init.zsh
 export XDG_CONFIG_HOME=~/.config
 ### Virtualenvwrapper
-if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
-  export WORKON_HOME=$HOME/.virtualenvs
-  source /usr/local/bin/virtualenvwrapper.sh
-fi
-
 export ENHANCED_COMMAND=ed
 export ENHANCED_FILTER=ENHANCED_FILTER=fzy:fzf:peco
 
@@ -23,7 +19,6 @@ zplug "junegunn/fzf-bin", \
     rename-to:fzf, \
     use:"*darwin*amd64*"
 
-zplug "bhilburn/powerlevel9k", use:powerlevel9k.zsh-theme
 zplug 'yous/vanilli.sh'
 zplug 'zsh-users/zsh-completions'
 zplug 'zsh-users/zaw'
@@ -51,7 +46,7 @@ if ! zplug check --verbose; then
 zplug load
 
 export CLICOLOR=1
-
+ZSH_THEME=robbyrussell
 HISTFILE=~/.zsh_historyx
 HISTSIZE=10000
 SAVEHIST=10000
@@ -89,7 +84,6 @@ setopt glob_complete  # globを展開しないで候補の一覧から補完す�
 setopt extended_glob  # 拡張globを有効にする。
 setopt mark_dirs   # globでパスを生成したときに、パスがディレクトリだったら最後に「/」をつける。
 
-
 #key binding
 bindkey -r '^A'
 bindkey '^Z' beginning-of-line
@@ -109,6 +103,11 @@ alias mixt='mix test'
 # rbenv
 if [ -e "$HOME/.rbenv" ]; then
   eval "$(rbenv init - zsh)"
+fi
+
+if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
+  export WORKON_HOME=$HOME/.virtualenvs
+  source /usr/local/bin/virtualenvwrapper.sh
 fi
 
 # rust
@@ -175,8 +174,6 @@ function tmux_automatically_attach_session()
             fi
 
             if is_osx && is_exists 'reattach-to-user-namespace'; then
-                # on OS X force tmux's default command
-                # to spawn a shell in the user's namespace
                 tmux_config=$(cat $HOME/.tmux.conf <(echo 'set-option -g default-command "reattach-to-user-namespace -l $SHELL"'))
                 tmux -f <(echo "$tmux_config") new-session && echo "$(tmux -V) created new session supported OS X"
             else
