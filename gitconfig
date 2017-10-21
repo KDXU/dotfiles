@@ -22,8 +22,6 @@
     default = upstream
 [pull]
     rebase = true
-[http]
-    sslVerify = false
 [diff]
     compactionHeuristic = true
 [commit]
