@@ -1,12 +1,5 @@
 # dotfiles
 
-## zplug
-
-```sh
-brew  tap jhawthorn/fzy
-brew install fzy
+```bash
+$ sh setup.sh
 ```
-
-## fonts
-
-https://github.com/gabrielelana/awesome-terminal-fonts/tree/patching-strategy/patched

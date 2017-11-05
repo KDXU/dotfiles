@@ -1,6 +1,10 @@
 brew install git
 brew tap Homebrew/bundle
 brew bundle
+
+# fisherman
+curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs https://git.io/fisher
+
 if ! [ -x "$(command -v nvim)" ]; then
   pip install neovim
   brew install neovim/neovim/neovim
@@ -8,10 +12,14 @@ fi
 
 cd ~
 mkdir .vim
-mkdir .config
-mkdir -p .git/hooks
+
+ln -sv dotfiles/config/ .config
+ln -snvf dotfiles/bin/ bin/
+ln -snvf dotfiles/dein.toml .dein.toml
 
 ln -sv .config/nvim .vim
+cp dotfiles/.iex.exs .
+
 mkdir -p ~/.vim/dein
 mkdir -p ~/.vim/colors
 
@@ -20,29 +28,5 @@ sh installer.sh ~/.cache/dein
 
 curl https://sh.rustup.rs -sSf | sh
 
-if ! [ -x "$(command -v kiex)" ]; then
-  curl -sSL https://raw.githubusercontent.com/taylor/kiex/master/install | zsh -s
-fi
-
-if [ -d "$HOME/custom" ]; then
-  git clone git@github.com:kdxu/my-shell-scripts.git custom
-fi
-
-mkdir -p .git/hooks
-mkdir .config
-mkdir -p .config/nvim/dein
-mkdir -p .config/nvim/colors
-
-# シンボリックリンクだと nvim が認識してくれない
-rm .config/nvim/init.vim
-cp dotfiles/nvimrc .config/nvim/init.vim
-
-ln -snvf dotfiles/nvimrc .vimrc
-
-ln -snvf dotfiles/dein.toml .dein.toml
-
 git config --global include.path ~/dotfiles/gitconfig
 
-ln -snvf dotfiles/zshrc .zshrc
-ln -snvf dotfiles/zshenv .zshenv
-pip3 install poweline-config

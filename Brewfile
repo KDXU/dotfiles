@@ -16,21 +16,8 @@ brew "redis"
 # ruby
 brew "ruby"
 
-# android
-brew "android-sdk"
-
-# docker
-brew "docker"
-
-# mono
-brew "mono"
-
-# haskell
-brew "cabal-install"
-brew "haskell-stack"
-
-# zsh
-brew "zsh"
+# fish
+brew "fish"
 
 # tmux
 brew "tmux"
@@ -38,11 +25,19 @@ brew "tmux"
 # figlet
 brew "figlet"
 
-# vscode
-cask "visual-studio-code"
+# yubikey personalization tool
+brew "ykpers"
 
-# kerl
-brew "kerl"
+# dash
+cask "dash"
 
 # slack
 cask "slack"
+
+# keybase
+cask "keybase"
+
+# gpg tools
+cask "gpg-suite"
+
+
