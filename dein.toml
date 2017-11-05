@@ -1,5 +1,8 @@
 [[plugins]]
 repo = 'Shougo/dein.vim'
+on_cmd = 'Denite'
+if = 'has("nvim")'
+hook_source = 'source ~/.config/nvim/userautoload/plugins/plugins-denite.vim'
 
 [[plugins]]
 repo = 'Shougo/vimproc.vim'
@@ -35,7 +38,8 @@ repo = 'cespare/vim-toml'
 
 [[plugins]]
 repo = 'elixir-lang/vim-elixir'
-
+[[plugins]]
+repo = 'thinca/vim-ref'
 [[plugins]]
 repo = 'pangloss/vim-javascript'
 
@@ -56,6 +60,8 @@ repo = 'vim-erlang/vim-erlang-compiler'
 repo = 'vim-erlang/vim-erlang-tags'
 [[plugins]]
 repo = 'slashmili/alchemist.vim'
+[[plugins]]
+repo = 'kbrw/elixir.nvim'
 [[plugins]]
 repo = 'fatih/vim-go'
 [[plugins]]
