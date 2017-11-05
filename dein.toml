@@ -12,7 +12,6 @@ on_i = 1
 [[plugins]]
 repo = 'Shougo/denite.nvim'
 on_cmd = 'Denite'
-hook_source = 'source ~/.config/nvim/userautoload/plugins/plugins-denite.vim'
 
 [[plugins]]
 repo = 'Shougo/neomru.vim'
@@ -57,43 +56,19 @@ repo = 'vim-erlang/vim-erlang-compiler'
 repo = 'vim-erlang/vim-erlang-tags'
 [[plugins]]
 repo = 'slashmili/alchemist.vim'
-
-[[plugins]]
-repo = 'Yggdroot/indentLine'
-
 [[plugins]]
 repo = 'fatih/vim-go'
-
 [[plugins]]
 repo = 'racer-rust/vim-racer'
-
 [[plugins]]
 repo = 'rust-lang/rust.vim'
-
 [[plugins]]
 repo = 'nvie/vim-flake8'
 on_ft = 'python'
-
 [[plugins]]
 repo = 'Yggdroot/indentLine'
-
-[[plugins]]
-repo = 'neovimhaskell/haskell-vim'
-
 [[plugins]]
 repo = 'vim-jp/vim-cpp'
-
-[[plugins]]
-repo = 'Shougo/neosnippet'
-
-[[plugins]]
-repo = 'Shougo/neosnippet-snippets'
-
-[[plugins]]
-repo = 'hashivim/vim-terraform.git'
-
 [[plugins]]
 repo = 'rizzatti/dash.vim'
 
-[[plugins]]
-repo = 'trusktr/seti.vim'
