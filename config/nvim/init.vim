@@ -3,11 +3,9 @@ if &compatible
 endif
 
 " dein.vim
-let s:dein_dir = expand('~/.cache/dein')
-let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
-execute 'set runtimepath^=' . s:dein_repo_dir
+set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
 
-call dein#begin(s:dein_dir)
+call dein#begin('~/.cache/dein/')
     let s:toml = '~/.dein.toml'
     call dein#load_toml(s:toml,      {'lazy': 0})
 call dein#end()
