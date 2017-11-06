@@ -60,8 +60,7 @@ repo = 'vim-erlang/vim-erlang-compiler'
 repo = 'vim-erlang/vim-erlang-tags'
 [[plugins]]
 repo = 'slashmili/alchemist.vim'
-[[plugins]]
-repo = 'kbrw/elixir.nvim'
+
 [[plugins]]
 repo = 'fatih/vim-go'
 [[plugins]]
