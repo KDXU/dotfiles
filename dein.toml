@@ -60,7 +60,6 @@ repo = 'vim-erlang/vim-erlang-compiler'
 repo = 'vim-erlang/vim-erlang-tags'
 [[plugins]]
 repo = 'slashmili/alchemist.vim'
-
 [[plugins]]
 repo = 'fatih/vim-go'
 [[plugins]]
@@ -76,4 +75,9 @@ repo = 'Yggdroot/indentLine'
 repo = 'vim-jp/vim-cpp'
 [[plugins]]
 repo = 'rizzatti/dash.vim'
-
+[[plugins]]
+repo = 'airblade/vim-rooter'
+[[plugins]]
+repo = 'sjl/badwolf'
+[[plugins]]
+repo = 'junegunn/vim-easy-align'
