@@ -5,10 +5,14 @@ endif
 " dein.vim
 set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
 
-call dein#begin('~/.cache/dein/')
-    let s:toml = '~/.dein.toml'
-    call dein#load_toml(s:toml,      {'lazy': 0})
-call dein#end()
+if dein#load_state('~/.cache/dein/')
+" Required:
+  call dein#begin('~/.cache/dein/')
+  call dein#add('~/.cache/dein/repos/github.com/Shougo/dein.vim')
+  let s:toml = '~/.dein.toml'
+  call dein#load_toml(s:toml,      {'lazy': 0})
+  call dein#end()
+endif
 
 if dein#check_install()
   call dein#install()
@@ -18,10 +22,7 @@ filetype plugin indent on
 set t_Co=256
 syntax enable
 
-let g:hybrid_use_iTerm_colors = 1
-
-colorscheme darkblue
-
+colorscheme badwolf
 set mouse=a
 set encoding=utf-8
 set fileencodings=utf-8,sjis,euc-jp,iso-2022-jp
@@ -45,11 +46,12 @@ set clipboard=unnamed
 
 highlight Normal ctermbg=NONE
 
-highlight ExtraWhitespace ctermbg=red guibg=#cccccc
+highlight ExtraWhitespace ctermbg=gray guibg=#cccccc
 match ExtraWhitespace /\s\+$/
 autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
 autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+autocmd FileType vimfiler match ExtraWhiteSpace ''
 autocmd BufWinLeave * call clearmatches()
 nnoremap O :<C-u>call append(expand('.'), '')<Cr>j
 
@@ -61,14 +63,6 @@ let g:syntastic_check_on_wq = 0
 
 " denite.nvim
 nnoremap <silent> <C-p> :<C-u>Denite file_rec<CR>
-" customize ignore globs
-call denite#custom#source('file_rec', 'matchers', ['matcher_fuzzy','matcher_ignore_globs'])
-call denite#custom#filter('matcher_ignore_globs', 'ignore_globs',
-      \ [
-      \ '.git/', '_build/', '__pycache__/',
-      \ 'images/', '*.o', '*.make',
-      \ '*.min.*', 'deps/',
-      \ 'img/', 'fonts/'])
 let g:vim_markdown_folding_disabled = 1
 
 " deoplete.vim
@@ -123,10 +117,20 @@ map <silent> [Tag]p :tabprevious<CR>
 " tig
 nnoremap tig :<C-u>w<CR>:te tig status<CR>
 
-
 " vimfiler
 let g:vimfiler_as_default_explorer = 1
 let g:vimfiler_safe_mode_by_default = 0
-noremap ;; :VimFiler -split -simple -winwidth=35 -no-quit<ENTER>
+noremap ;; :VimFiler -split -simple -winwidth=30 -no-quit<ENTER>
 let g:vimfiler_enable_auto_cd = 1
 autocmd FileType vimfiler nmap <buffer> <CR> <Plug>(vimfiler_expand_or_edit)
+
+" vim-rooter
+set tags+=.git/tags,tags
+let g:auto_ctags = 1
+let g:auto_ctags_directory_list = ['.git']
+
+let g:rooter_use_lcd = 1
+autocmd BufEnter * :Rooter
+
+" ctags
+nnoremap <C-]> g<C-]>
