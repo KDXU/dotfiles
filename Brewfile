@@ -28,16 +28,9 @@ brew "figlet"
 # yubikey personalization tool
 brew "ykpers"
 
-# dash
-cask "dash"
-
-# slack
-cask "slack"
-
 # keybase
 cask "keybase"
 
 # gpg tools
 cask "gpg-suite"
-
 
