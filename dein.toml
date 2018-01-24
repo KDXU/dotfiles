@@ -95,3 +95,6 @@ repo = 'airblade/vim-rooter'
 
 [[plugins]]
 repo = 'junegunn/vim-easy-align'
+
+[[plugins]]
+repo = 'dag/vim-fish'
