@@ -98,3 +98,6 @@ repo = 'junegunn/vim-easy-align'
 
 [[plugins]]
 repo = 'dag/vim-fish'
+
+[[plugins]]
+repo = 'reasonml-editor/vim-reason-plus'

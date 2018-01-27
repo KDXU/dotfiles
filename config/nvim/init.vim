@@ -60,3 +60,10 @@ let g:syntastic_check_on_wq = 0
 
 " ctags
 nnoremap <C-]> g<C-]>
+
+
+" react-reason
+let g:LanguageClient_serverCommands = {
+    \ 'reason': ['ocaml-language-server', '--stdio'],
+    \ 'ocaml': ['ocaml-language-server', '--stdio'],
+    \ }
