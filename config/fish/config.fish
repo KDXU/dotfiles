@@ -1,5 +1,5 @@
 OTP_VERSION="20.2"
-ELIXIR_VERSION="1.6.0"
+ELIXIR_VERSION="1.6.1"
 
 if status --is-login
     set -x PATH $PATH /usr/local/bin
