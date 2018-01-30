@@ -1,4 +1,7 @@
 [[plugins]]
+repo = 'w0ng/vim-hybrid'
+
+[[plugins]]
 repo = 'Shougo/dein.vim'
 on_cmd = 'Denite'
 
@@ -9,6 +12,9 @@ build = 'make'
 [[plugins]]
 repo = 'Shougo/deoplete.nvim'
 on_i = 1
+
+[[plugins]]
+repo = 'szw/vim-tags'
 
 [[plugins]]
 repo = 'roxma/nvim-yarp'
@@ -101,3 +107,9 @@ repo = 'dag/vim-fish'
 
 [[plugins]]
 repo = 'reasonml-editor/vim-reason-plus'
+
+[[plugins]]
+repo = 'kien/rainbow_parentheses.vim'
+
+[[plugins]]
+repo = 'ntpeters/vim-better-whitespace'

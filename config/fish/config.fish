@@ -1,13 +1,17 @@
-OTP_VERSION="20.2"
-ELIXIR_VERSION="1.6.1"
+set OTP_VERSION "20.2"
+set ELIXIR_VERSION "1.6.1"
 
-if status --is-login
-    set -x PATH $PATH /usr/local/bin
-    set -x PATH $PATH ~/bin
-    set -x PATH $PATH ~/.cargo/bin
-    set -x PATH $PATH ~/packages/otp/${ERLANG_VERSION}/bin
-    set -x PATH $PATH ~/packages/${ELIXIR_VERSION}/bin
-end
+set -x EDITOR nvim
+
+# Paths
+test -d /usr/local/bin; and set -x PATH $PATH /usr/local/bin
+test -d ~/bin; and set -x PATH $PATH ~/bin
+test -d ~/.cargo/bin; and set -x PATH $PATH ~/.cargo/bin
+test -d ~/packages/otp/{$ERLANG_VERSION}; and set -x PATH $PATH ~/packages/otp/{$ERLANG_VERSION}/bin
+test -d ~/packages/elixir/{$ELIXIR_VERSION}; and set -x PATH $PATH ~/packages/elixir/{$ELIXIR_VERSION}/bin
+
+# Opam
+# eval (opam config env)
 
 alias vim "nvim"
 alias tis "tig status"
