@@ -100,3 +100,11 @@ call denite#custom#filter('matcher_ignore_globs', 'ignore_globs',
       \ 'images/', '*.o', '*.make',
       \ '*.min.*',
       \ 'img/', 'fonts/'])
+
+" vim-go
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 1
+" gocode
+let g:deoplete#sources#go#gocode_binary = '$HOME/go/bin/gocode'
+

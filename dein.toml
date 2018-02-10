@@ -78,6 +78,10 @@ repo = 'slashmili/alchemist.vim'
 repo = 'fatih/vim-go'
 
 [[plugins]]
+repo = 'zchee/deoplete-go'
+on_ft = 'go'
+
+[[plugins]]
 repo = 'racer-rust/vim-racer'
 
 [[plugins]]
