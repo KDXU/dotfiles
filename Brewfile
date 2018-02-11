@@ -34,3 +34,6 @@ cask "keybase"
 # gpg tools
 cask "gpg-suite"
 
+# direnv
+brew "direnv"
+
