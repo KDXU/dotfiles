@@ -56,7 +56,6 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
-
 " deoplete.vim
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#max_list = 20
@@ -71,6 +70,8 @@ let g:vimfiler_tree_closed_icon = '▸'
 let g:vimfiler_file_icon = '-'
 let g:vimfiler_marked_file_icon = '✓'
 let g:vimfiler_readonly_file_icon = '✗'
+let g:vimfiler_edit_action = 'tabopen'
+
 
 " ctags
 nnoremap <C-]> g<C-]>

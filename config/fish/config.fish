@@ -9,9 +9,10 @@ test -d ~/bin; and set -x PATH $PATH ~/bin
 test -d ~/.cargo/bin; and set -x PATH $PATH ~/.cargo/bin
 test -d ~/packages/otp/{$ERLANG_VERSION}; and set -x PATH $PATH ~/packages/otp/{$ERLANG_VERSION}/bin
 test -d ~/packages/elixir/{$ELIXIR_VERSION}; and set -x PATH $PATH ~/packages/elixir/{$ELIXIR_VERSION}/bin
-
+set -x PATH $PATH /usr/local/go/bin
 # Opam
 # eval (opam config env)
+eval (direnv hook fish)
 
 alias vim "nvim"
 alias tis "tig status"
