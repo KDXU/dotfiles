@@ -13,6 +13,6 @@ tar -xzf otp-src.tar.gz -C ~/packages/otp/${OTP_VERSION} --strip-components=1
 rm otp-src.tar.gz
 cd ~/packages/otp/${OTP_VERSION}
 ./otp_build autoconf
-./configure --enable-dirty-schedulers
+./configure --disable-hipe --enable-smp-support --enable-threads --enable-kernel-poll --enable-darwin-64bit --without-javac --with-ssl=/usr/local
 make -j${nproc}
 echo "Finished"

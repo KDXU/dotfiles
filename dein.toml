@@ -44,9 +44,6 @@ repo = 'tpope/vim-surround'
 repo = 'cespare/vim-toml'
 
 [[plugins]]
-repo = 'elixir-lang/vim-elixir'
-
-[[plugins]]
 repo = 'thinca/vim-ref'
 
 [[plugins]]
@@ -60,6 +57,12 @@ repo = 'scrooloose/syntastic'
 on_ft = ['python', 'javascript', 'elixir']
 
 [[plugins]]
+repo = 'elixir-lang/vim-elixir'
+
+[[plugins]]
+repo = 'slashmili/alchemist.vim'
+
+[[plugins]]
 repo = 'vim-erlang/vim-erlang-runtime'
 
 [[plugins]]
@@ -70,9 +73,6 @@ repo = 'vim-erlang/vim-erlang-compiler'
 
 [[plugins]]
 repo = 'vim-erlang/vim-erlang-tags'
-
-[[plugins]]
-repo = 'slashmili/alchemist.vim'
 
 [[plugins]]
 repo = 'fatih/vim-go'
