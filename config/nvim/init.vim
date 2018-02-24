@@ -109,3 +109,6 @@ let g:go_highlight_structs = 1
 " gocode
 let g:deoplete#sources#go#gocode_binary = '$HOME/go/bin/gocode'
 
+"markdown
+let g:vim_markdown_folding_disabled = 1
+

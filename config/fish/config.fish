@@ -12,6 +12,8 @@ test -d ~/packages/elixir/{$ELIXIR_VERSION}; and set -x PATH $PATH ~/packages/el
 test -d ~/packages/otp/{$OTP_VERSION}/bin; and set -x PATH $PATH ~/packages/otp/{$OTP_VERSION}/bin
 test -d ~/packages/elixir/{$ELIXIR_VERSION}/bin; and set -x PATH $PATH ~/packages/elixir/{$ELIXIR_VERSION}/bin
 test -d /usr/local/go/bin; and set -x PATH $PATH /usr/local/go/bin
+set -x PATH $PATH /usr/local/go/bin
+set -x PATH $PATH $HOME/dotfiles/bin
 # Opam
 # eval (opam config env)
 eval (direnv hook fish)
