@@ -112,3 +112,5 @@ let g:deoplete#sources#go#gocode_binary = '$HOME/go/bin/gocode'
 "markdown
 let g:vim_markdown_folding_disabled = 1
 
+au BufRead,BufNewFile /nginx/* set ft=nginx
+au BufRead,BufNewFile nginx.conf set ft=nginx

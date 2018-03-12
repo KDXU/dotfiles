@@ -22,3 +22,7 @@ eval (direnv hook fish)
 
 alias vim "nvim"
 alias tis "tig status"
+
+function dostuff --on-event fish_prompt
+  ~/.tmux-gitbar/update-gitbar
+end
