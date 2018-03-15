@@ -14,7 +14,7 @@ set -x PATH $PATH /usr/local/go/bin
 set -x PATH $PATH $HOME/dotfiles/bin
 
 # ssh-auth-sock
-set -x SSH_AUTH_SOCK ~/.gnupg/S.gpg-agent.ssh
+set -x SSH_AUTH_SOCK $HOME/.gnupg/S.gpg-agent.ssh
 
 # Opam
 # eval (opam config env)
@@ -23,6 +23,6 @@ eval (direnv hook fish)
 alias vim "nvim"
 alias tis "tig status"
 
-function dostuff --on-event fish_prompt
-  ~/.tmux-gitbar/update-gitbar
-end
+# pyenv
+status --is-interactive; and source (pyenv init -|psub)
+

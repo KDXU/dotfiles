@@ -3,15 +3,17 @@ if &compatible
 endif
 
 " dein.vim
-set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
+set runtimepath+=$HOME/.cache/dein/repos/github.com/Shougo/dein.vim
 
-if dein#load_state('~/.cache/dein/')
-" Required:
-  call dein#begin('~/.cache/dein/')
-  call dein#add('~/.cache/dein/repos/github.com/Shougo/dein.vim')
+if dein#load_state(expand('~/.cache/dein/'))
+  call dein#begin(expand('~/.cache/dein/'))
+  call dein#add('Shougo/dein.vim')
   let s:toml = '~/.dein.toml'
+  let s:lazy_toml = '~/.dein_lazy.toml'
   call dein#load_toml(s:toml,      {'lazy': 0})
+  call dein#load_toml(s:lazy_toml, {'lazy': 1})
   call dein#end()
+  call dein#save_state()
 endif
 
 if dein#check_install()
@@ -19,9 +21,9 @@ if dein#check_install()
 endif
 
 filetype plugin indent on
-set t_Co=256
 syntax enable
 
+set t_Co=256
 set background=dark
 colorscheme hybrid
 set mouse=a
@@ -60,34 +62,8 @@ let g:syntastic_check_on_wq = 0
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#max_list = 20
 
-" VimFiler
-let mapleader=" "
-let g:vimfiler_as_default_explorer = 1
-let g:vimfiler_ignore_pattern='\(^\.\|\~$\|\.pyc$\|\.git\|\.[oad]$\)'
-nnoremap ;; :VimFiler -buffer-name=explorer -split -winwidth=30 -toggle -no-quit<Cr>
-let g:vimfiler_tree_opened_icon = '▾'
-let g:vimfiler_tree_closed_icon = '▸'
-let g:vimfiler_file_icon = '-'
-let g:vimfiler_marked_file_icon = '✓'
-let g:vimfiler_readonly_file_icon = '✗'
-let g:vimfiler_edit_action = 'tabopen'
-
-
 " ctags
 nnoremap <C-]> g<C-]>
-
-" rainbowparenthes
-let g:rbpt_max = 16
-au VimEnter * RainbowParenthesesToggle
-au Syntax * RainbowParenthesesLoadRound
-au Syntax * RainbowParenthesesLoadSquare
-au Syntax * RainbowParenthesesLoadBraces
-
-" react-reason
-let g:LanguageClient_serverCommands = {
-    \ 'reason': ['ocaml-language-server', '--stdio'],
-    \ 'ocaml': ['ocaml-language-server', '--stdio'],
-    \ }
 
 " denite
 nnoremap <silent> <C-p> :<C-u>Denite file_rec<CR>
@@ -106,11 +82,13 @@ call denite#custom#filter('matcher_ignore_globs', 'ignore_globs',
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
 let g:go_highlight_structs = 1
+
 " gocode
 let g:deoplete#sources#go#gocode_binary = '$HOME/go/bin/gocode'
 
-"markdown
-let g:vim_markdown_folding_disabled = 1
-
 au BufRead,BufNewFile /nginx/* set ft=nginx
 au BufRead,BufNewFile nginx.conf set ft=nginx
+
+" markdown
+set syntax=markdown
+au BufRead,BufNewFile *.md set filetype=markdown

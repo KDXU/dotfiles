@@ -1,0 +1,70 @@
+[[plugins]]
+repo = 'pangloss/vim-javascript'
+on_ft = 'javascript'
+
+[[plugins]]
+repo = 'vim-ruby/vim-ruby'
+on_ft = 'ruby'
+
+[[plugins]]
+repo = 'scrooloose/syntastic'
+on_ft = ['python', 'javascript', 'elixir', 'python']
+
+[[plugins]]
+repo = 'elixir-lang/vim-elixir'
+on_ft = 'elixir'
+
+[[plugins]]
+repo = 'slashmili/alchemist.vim'
+on_ft = 'elixir'
+
+[[plugins]]
+repo = 'vim-erlang/vim-erlang-runtime'
+on_ft = 'erlang'
+
+[[plugins]]
+repo = 'vim-erlang/vim-erlang-omnicomplete'
+on_ft = 'erlang'
+
+[[plugins]]
+repo = 'vim-erlang/vim-erlang-compiler'
+on_ft = 'erlang'
+
+[[plugins]]
+repo = 'vim-erlang/vim-erlang-tags'
+on_ft = 'erlang'
+
+[[plugins]]
+repo = 'fatih/vim-go'
+
+[[plugins]]
+repo = 'zchee/deoplete-go'
+on_ft = 'go'
+
+[[plugins]]
+repo = 'racer-rust/vim-racer'
+
+[[plugins]]
+repo = 'rust-lang/rust.vim'
+on_ft = 'rust'
+
+[[plugins]]
+repo = 'nvie/vim-flake8'
+on_ft = 'python'
+
+# Django & VirtualEnv
+[[plugins]]
+repo = 'lambdalisue/vim-django-support'
+on_ft = 'python'
+
+[[plugins]]
+repo = 'jmcantrell/vim-virtualenv'
+on_ft = 'python'
+
+[[plugins]]
+repo= 'maxmellon/vim-jsx-pretty'
+on_ft = ['javascript']
+
+[[plugins]]
+repo = 'flowtype/vim-flow'
+on_ft = ['javascript']

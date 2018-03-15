@@ -4,6 +4,7 @@ ln -snvf ~/dotfiles/config/nvim/init.vim ~/.config/nvim/init.vim
 ln -snvf ~/dotfiles/config/fish/config.fish ~/.config/fish/config.fish
 ln -snvf ~/dotfiles/bin/ ~/bin/
 ln -snvf ~/dotfiles/dein.toml .dein.toml
+ln -snvf ~/dotfiles/dein_lazy.toml .dein_lazy.toml
 
 ln -sv .config/nvim .vim
 ln -snvf dotfiles/.iex.exs .
