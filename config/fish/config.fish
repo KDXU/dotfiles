@@ -25,4 +25,3 @@ alias tis "tig status"
 
 # pyenv
 status --is-interactive; and source (pyenv init -|psub)
-
