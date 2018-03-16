@@ -1,7 +1,9 @@
 #!/bin/bash
-if [ $# -ne 2 ]; then
-  echo "usage: find .ext 'Keyword'" 1>&2
+if [ $# -ne 3 ]; then
+  echo "usage: searchdir '.ext' 'Keyword' 'Loc'" 1>&2
   exit 1
 fi
 
-ag -l -G "\.$1$" . | xargs grep $2 -n
+echo "searching .$1 files includes word $2 in $3."
+
+ag -l -G "\.$1$" $2 $3 | xargs grep $2 -n
