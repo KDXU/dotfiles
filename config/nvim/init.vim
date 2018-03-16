@@ -66,11 +66,20 @@ let g:deoplete#max_list = 20
 nnoremap <C-]> g<C-]>
 
 " denite
-nnoremap <silent> <C-p> :<C-u>Denite file_rec<CR>
-" grep
-nnoremap <silent> ;cg :<C-u>DeniteCursorWord grep -buffer-name=search line<CR><C-R><C-W><CR>
-" 普通にgrep
-nnoremap <silent> ;g :<C-u>Denite -buffer-name=search -mode=normal grep<CR>"
+call denite#custom#option('default', 'prompt', '>')
+call denite#custom#option('default', 'direction', 'top')
+call denite#custom#var('grep', 'command', ['ag'])
+call denite#custom#var('file_rec', 'command', ['ag', '--follow', '--nocolor', '--nogroup', '-g', ''])
+call denite#custom#var('grep', 'default_opts',['-i', '--vimgrep'])
+call denite#custom#var('grep', 'recursive_opts', [])
+call denite#custom#var('grep', 'pattern_opt', [])
+call denite#custom#var('grep', 'separator', ['--'])
+call denite#custom#var('grep', 'final_opts', [])
+call denite#custom#map('insert', '<enter>', '<denite:enter_mode:normal>', 'noremap')
+call denite#custom#map('normal', '<esc>', '<denite:quit>', 'noremap')
+noremap <C-P> :Denite file_rec<CR>
+noremap <C-Z> :Denite file_old<CR>
+
 call denite#custom#filter('matcher_ignore_globs', 'ignore_globs',
       \ [
       \ '.git/', 'build/', '__pycache__/',

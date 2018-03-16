@@ -4,4 +4,4 @@ if [ $# -ne 2 ]; then
   exit 1
 fi
 
-find . -type f -name "*.$1" | xargs grep $2 -n
+ag -l -G "\.$1$" . | xargs grep $2 -n
