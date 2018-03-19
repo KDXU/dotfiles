@@ -26,14 +26,6 @@ repo = 'Shougo/denite.nvim'
 on_cmd = 'Denite'
 
 [[plugins]]
-repo = 'Shougo/neomru.vim'
-on_path = '.*'
-
-[[plugins]]
-repo = 'Shougo/unite.vim'
-depends = 'neomru.vim'
-
-[[plugins]]
 repo = 'tpope/vim-surround'
 
 [[plugins]]
@@ -63,3 +55,11 @@ repo = 'ntpeters/vim-better-whitespace'
 [[plugins]]
 repo = 'godlygeek/tabular'
 
+[[plugins]]
+repo = 'tpope/vim-fugitive'
+
+[[plugins]]
+repo = 'vim-airline/vim-airline'
+
+[[plugins]]
+repo =  'vim-airline/vim-airline-themes'

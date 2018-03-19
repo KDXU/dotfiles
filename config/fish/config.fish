@@ -10,7 +10,7 @@ test -d ~/.cargo/bin; and set -x PATH $PATH ~/.cargo/bin
 test -d ~/packages/otp/{$OTP_VERSION}/bin; and set -x PATH $PATH ~/packages/otp/{$OTP_VERSION}/bin
 test -d ~/packages/elixir/{$ELIXIR_VERSION}/bin; and set -x PATH $PATH ~/packages/elixir/{$ELIXIR_VERSION}/bin
 test -d /usr/local/go/bin; and set -x PATH $PATH /usr/local/go/bin
-set -x PATH $PATH /usr/local/go/bin
+# set -x PATH $PATH /usr/local/go/bin
 set -x PATH $PATH $HOME/dotfiles/bin
 
 # ssh-auth-sock
@@ -24,4 +24,5 @@ alias vim "nvim"
 alias tis "tig status"
 
 # pyenv
+set -x PYENV_ROOT $HOME/.pyenv
 status --is-interactive; and source (pyenv init -|psub)
