@@ -1,5 +1,5 @@
 set OTP_VERSION "20.2"
-set ELIXIR_VERSION "v1.6.3"
+set ELIXIR_VERSION "v1.6.4"
 
 set -x EDITOR nvim
 
