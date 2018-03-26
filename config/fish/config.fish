@@ -1,5 +1,5 @@
-set OTP_VERSION "20.2"
 set ELIXIR_VERSION "v1.6.4"
+set ERLANG_VERSION "20.3"
 
 set -x EDITOR nvim
 
@@ -7,10 +7,7 @@ set -x EDITOR nvim
 test -d /usr/local/bin; and set -x PATH $PATH /usr/local/bin
 test -d ~/bin; and set -x PATH $PATH ~/bin
 test -d ~/.cargo/bin; and set -x PATH $PATH ~/.cargo/bin
-test -d ~/packages/otp/{$OTP_VERSION}/bin; and set -x PATH $PATH ~/packages/otp/{$OTP_VERSION}/bin
-test -d ~/packages/elixir/{$ELIXIR_VERSION}/bin; and set -x PATH $PATH ~/packages/elixir/{$ELIXIR_VERSION}/bin
 test -d /usr/local/go/bin; and set -x PATH $PATH /usr/local/go/bin
-# set -x PATH $PATH /usr/local/go/bin
 set -x PATH $PATH $HOME/dotfiles/bin
 
 # ssh-auth-sock
@@ -26,3 +23,9 @@ alias tis "tig status"
 # pyenv
 set -x PYENV_ROOT $HOME/.pyenv
 status --is-interactive; and source (pyenv init -|psub)
+
+
+# kerl
+
+source ~/.otp/$ERLANG_VERSION/activate.fish
+

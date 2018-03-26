@@ -1,0 +1,3 @@
+KERL_BUILD_BACKEND=git
+OTP_GITHUB_URL=https://github.com/erlang/otp
+KERL_CONFIGURE_OPTIONS="--with-ssl=$(brew --prefix openssl) --disable-hipe --enable-smp-support --enable-threads --enable-kernel-poll"
