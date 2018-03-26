@@ -8,6 +8,8 @@ test -d /usr/local/bin; and set -x PATH $PATH /usr/local/bin
 test -d ~/bin; and set -x PATH $PATH ~/bin
 test -d ~/.cargo/bin; and set -x PATH $PATH ~/.cargo/bin
 test -d /usr/local/go/bin; and set -x PATH $PATH /usr/local/go/bin
+test -d ~/packages/elixir/$ELIXIR_VERSION/bin; and set -x PATH $PATH ~/packages/elixir/$ELIXIR_VERSION/bin
+
 set -x PATH $PATH $HOME/dotfiles/bin
 
 # ssh-auth-sock
