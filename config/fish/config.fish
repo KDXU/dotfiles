@@ -28,6 +28,5 @@ status --is-interactive; and source (pyenv init -|psub)
 
 
 # kerl
-
-source ~/otp/$ERLANG_VERSION/activate.fish
+source ~/.otp/$ERLANG_VERSION/activate.fish
 
