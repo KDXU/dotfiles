@@ -7,11 +7,6 @@ let g:python3_host_prog = expand('~/.pyenv/shims/python3')
 let g:loaded_python_provider = 1
 let g:loaded_ruby_provider = 1
 let g:loaded_node_provider = 1
-if exists("$VIRTUAL_ENV")
-    let g:python3_host_prog=substitute(system("which -a python3 | head -n2 | tail -n1"), "\n", '', 'g')
-else
-    let g:python3_host_prog=substitute(system("which python3"), "\n", '', 'g')
-endif
 
 " dein.vim
 set runtimepath+=$HOME/.cache/dein/repos/github.com/Shougo/dein.vim
@@ -112,4 +107,3 @@ au BufRead,BufNewFile nginx.conf set ft=nginx
 " markdown
 set syntax=markdown
 au BufRead,BufNewFile *.md set filetype=markdown
-let g:airline_theme='soda'
