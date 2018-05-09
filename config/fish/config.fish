@@ -1,5 +1,5 @@
-set ELIXIR_VERSION "v1.6.4"
-set ERLANG_VERSION "20.3"
+set ELIXIR_VERSION "v1.6.5"
+set ERLANG_VERSION "21.0-rc1"
 
 set -x EDITOR nvim
 
@@ -21,6 +21,9 @@ eval (direnv hook fish)
 
 alias vim "nvim"
 alias tis "tig status"
+alias mic "mix compile"
+alias mit "mix test"
+alias mir "mix release"
 
 # pyenv
 set -x PYENV_ROOT $HOME/.pyenv
