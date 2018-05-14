@@ -1,8 +1,9 @@
 cd ~
 
-ln -snvf ~/dotfiles/config/nvim/init.vim ~/.config/nvim/init.vim
+ln -snvf ~/dotfiles/config/nvim/init.vim  ~/.config/nvim/init.vim
+ln  -snvf config/nvim/ftplugin/ ../.config/nvim/ftplugin
 ln -snvf ~/dotfiles/config/fish/config.fish ~/.config/fish/config.fish
-ln -snvf ~/dotfiles/bin/ ~/bin/
+ln -snvf ~/dotfiles/bin/ ~/bin
 ln -snvf ~/dotfiles/dein.toml .dein.toml
 ln -snvf ~/dotfiles/dein_lazy.toml .dein_lazy.toml
 

@@ -108,5 +108,3 @@ au BufRead,BufNewFile nginx.conf set ft=nginx
 set syntax=markdown
 au BufRead,BufNewFile *.md set filetype=markdown
 
-imap >> \|><Space>
-
