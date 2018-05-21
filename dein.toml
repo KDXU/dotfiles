@@ -63,3 +63,8 @@ repo = 'vim-airline/vim-airline'
 
 [[plugins]]
 repo =  'vim-airline/vim-airline-themes'
+
+[[plugins]]
+repo = 'vim-syntastic/syntastic'
+on_ft = ['python', 'javascript', 'elixir', 'python']
+

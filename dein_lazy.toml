@@ -7,10 +7,6 @@ repo = 'vim-ruby/vim-ruby'
 on_ft = 'ruby'
 
 [[plugins]]
-repo = 'scrooloose/syntastic'
-on_ft = ['python', 'javascript', 'elixir', 'python']
-
-[[plugins]]
 repo = 'elixir-lang/vim-elixir'
 on_ft = 'elixir'
 

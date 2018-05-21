@@ -59,6 +59,10 @@ end
 highlight Normal ctermbg=NONE
 
 "syntastic
+"set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
@@ -108,3 +112,4 @@ au BufRead,BufNewFile nginx.conf set ft=nginx
 set syntax=markdown
 au BufRead,BufNewFile *.md set filetype=markdown
 
+let g:syntastic_enable_elixir_checker = 1
