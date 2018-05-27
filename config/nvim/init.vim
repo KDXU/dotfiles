@@ -49,6 +49,7 @@ set tabstop=2
 set cursorline
 set expandtab
 set noswapfile
+set conceallevel=0
 
 if has("mac")
   set clipboard=unnamed
