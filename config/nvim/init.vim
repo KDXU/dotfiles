@@ -41,7 +41,9 @@ set listchars=tab:»-,trail:-,extends:»,precedes:«,nbsp:%
 set showbreak=↪
 set list
 set formatoptions+=mM
-set number
+set number relativenumber
+set nonumber norelativenumber
+set number! relativenumber!
 set autoindent
 set title
 set showtabline=2
@@ -115,3 +117,4 @@ set syntax=markdown
 au BufRead,BufNewFile *.md set filetype=markdown
 
 let g:syntastic_enable_elixir_checker = 1
+let g:flow#showquickfix = 0

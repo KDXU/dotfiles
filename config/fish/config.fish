@@ -22,7 +22,7 @@ eval (direnv hook fish)
 alias vim "nvim"
 alias tis "tig status"
 alias mic "mix compile"
-alias mit "mix test"
+alias mit "mix ecto.reset; mix test"
 alias mir "mix release"
 
 # pyenv
