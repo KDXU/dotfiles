@@ -116,5 +116,4 @@ au BufRead,BufNewFile nginx.conf set ft=nginx
 set syntax=markdown
 au BufRead,BufNewFile *.md set filetype=markdown
 
-let g:syntastic_enable_elixir_checker = 1
 let g:flow#showquickfix = 0
