@@ -16,13 +16,15 @@ set -x PATH $PATH $HOME/dotfiles/bin
 set -x SSH_AUTH_SOCK $HOME/.gnupg/S.gpg-agent.ssh
 
 # Opam
-# eval (opam config env)
-eval (direnv hook fish)
+eval (direnv hook env)
 
+# aliases
 alias vim "nvim"
 alias tis "tig status"
 alias mic "mix compile"
 alias mit "mix ecto.reset; mix test"
+alias mif "mix format"
+alias mit "env MIX_ENV=test mix local_test"
 alias mir "mix release"
 
 # pyenv
