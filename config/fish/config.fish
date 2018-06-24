@@ -26,6 +26,7 @@ alias mit "mix ecto.reset; mix test"
 alias mif "mix format"
 alias mit "env MIX_ENV=test mix local_test"
 alias mir "mix release"
+alias ocaml "rlwrap ocaml"
 
 # pyenv
 set -x PYENV_ROOT $HOME/.pyenv
