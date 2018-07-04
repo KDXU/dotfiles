@@ -16,7 +16,7 @@ set -x PATH $PATH $HOME/dotfiles/bin
 set -x SSH_AUTH_SOCK $HOME/.gnupg/S.gpg-agent.ssh
 
 # Opam
-eval (direnv hook env)
+eval (direnv hook fish)
 
 # aliases
 alias vim "nvim"
