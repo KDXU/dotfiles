@@ -32,7 +32,10 @@ alias ocaml "rlwrap ocaml"
 set -x PYENV_ROOT $HOME/.pyenv
 status --is-interactive; and source (pyenv init -|psub)
 
-
 # kerl
 source ~/.otp/$ERLANG_VERSION/activate.fish
 
+# peco
+function fish_user_key_bindings
+  bind \cr 'peco_select_history (commandline -b)'
+end

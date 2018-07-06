@@ -22,6 +22,9 @@ brew "fish"
 # tmux
 brew "tmux"
 
+# ghq
+brew "ghq"
+
 # figlet
 brew "figlet"
 

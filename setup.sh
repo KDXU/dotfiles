@@ -1,8 +1,9 @@
 cd ~
 
 ln -snvf ~/dotfiles/config/nvim/init.vim  ~/.config/nvim/init.vim
-ln  -snvf config/nvim/ftplugin/ ../.config/nvim/ftplugin
+ln -snvf config/nvim/ftplugin/ ../.config/nvim/ftplugin
 ln -snvf ~/dotfiles/config/fish/config.fish ~/.config/fish/config.fish
+ln -snvf ~/dotfiles/config/fish/fishfile ~/.config/fish/fishfile
 ln -snvf ~/dotfiles/bin/ ~/bin
 ln -snvf ~/dotfiles/dein.toml .dein.toml
 ln -snvf ~/dotfiles/dein_lazy.toml .dein_lazy.toml
@@ -21,6 +22,9 @@ curl https://sh.rustup.rs -sSf | sh
 
 # Git Config
 git config --global include.path ~/dotfiles/gitconfig
+
+# fisherman
+curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs https://git.io/fisher
 
 sh ~/dotfiles/install_erlang.sh
 sh ~/dotfiles/install_elixir.sh
