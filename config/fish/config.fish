@@ -1,4 +1,4 @@
-set ELIXIR_VERSION "v1.6.6"
+set ELIXIR_VERSION "v1.7.0"
 set ERLANG_VERSION "21.0"
 
 set -x EDITOR nvim
