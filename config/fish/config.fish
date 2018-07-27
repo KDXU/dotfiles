@@ -1,5 +1,4 @@
-set ELIXIR_VERSION "v1.7.0"
-set ERLANG_VERSION "21.0"
+set ERLANG_VERSION "21.0.4"
 
 set -x EDITOR nvim
 
@@ -8,7 +7,7 @@ test -d /usr/local/bin; and set -x PATH $PATH /usr/local/bin
 test -d ~/bin; and set -x PATH $PATH ~/bin
 test -d ~/.cargo/bin; and set -x PATH $PATH ~/.cargo/bin
 test -d /usr/local/go/bin; and set -x PATH $PATH /usr/local/go/bin
-test -d ~/packages/elixir/$ELIXIR_VERSION/bin; and set -x PATH $PATH ~/packages/elixir/$ELIXIR_VERSION/bin
+test -d ~/packages/elixir/bin; and set -x PATH $PATH ~/packages/elixir/bin
 
 set -x PATH $PATH $HOME/dotfiles/bin
 

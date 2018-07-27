@@ -1,6 +1,7 @@
 [user]
     name = Kyoko KADOWAKI
     email = kyoko.kadowaki@gmail.com
+    signingkey = 116CA798
 [color]
     diff = auto
     grep = auto
@@ -27,3 +28,8 @@
 [commit]
     verbose = true
     template = ~/dotfiles/gitmessage.txt
+    gpgsign = true
+[gpg]
+    program = gpg2
+[ghq]
+  root = ~/ghq
