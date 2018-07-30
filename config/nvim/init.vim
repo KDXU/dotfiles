@@ -120,5 +120,4 @@ set syntax=markdown
 au BufRead,BufNewFile *.md set filetype=markdown
 
 let g:flow#showquickfix = 0
-
 let g:indentLine_setConceal = 0
