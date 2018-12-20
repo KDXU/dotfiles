@@ -71,6 +71,8 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_javascript_eslint_exe = 'npm run lint --'
 
 " deoplete.vim
 let g:deoplete#enable_at_startup = 1
@@ -109,6 +111,7 @@ let g:go_highlight_structs = 1
 " gocode
 let g:deoplete#sources#go#gocode_binary = '$HOME/go/bin/gocode'
 
+" nginx
 au BufRead,BufNewFile /nginx/* set ft=nginx
 au BufRead,BufNewFile nginx.conf set ft=nginx
 
@@ -117,3 +120,5 @@ set syntax=markdown
 au BufRead,BufNewFile *.md set filetype=markdown
 
 let g:flow#showquickfix = 0
+
+let g:indentLine_setConceal = 0

@@ -8,6 +8,8 @@ test -d ~/bin; and set -x PATH $PATH ~/bin
 test -d ~/.cargo/bin; and set -x PATH $PATH ~/.cargo/bin
 test -d /usr/local/go/bin; and set -x PATH $PATH /usr/local/go/bin
 test -d ~/packages/elixir/bin; and set -x PATH $PATH ~/packages/elixir/bin
+set -x PATH $PATH ~/.yarn/bin
+set -x PATH $PATH ~/.config/yarn/global/node_modules/.bin
 
 set -x PATH $PATH $HOME/dotfiles/bin
 
@@ -38,3 +40,4 @@ source ~/.otp/$ERLANG_VERSION/activate.fish
 function fish_user_key_bindings
   bind \cr 'peco_select_history (commandline -b)'
 end
+set -g fish_user_paths "/usr/local/opt/openssl/bin" $fish_user_paths

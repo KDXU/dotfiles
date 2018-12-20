@@ -37,8 +37,6 @@ repo = 'thinca/vim-ref'
 [[plugins]]
 repo = 'Yggdroot/indentLine'
 
-[[plugins]]
-repo = 'vim-scripts/nginx.vim'
 
 [[plugins]]
 repo = 'airblade/vim-rooter'
@@ -66,5 +64,6 @@ repo =  'vim-airline/vim-airline-themes'
 
 [[plugins]]
 repo = 'vim-syntastic/syntastic'
-on_ft = ['python', 'javascript', 'elixir', 'python']
 
+[[plugins]]
+repo = 'w0rp/ale'

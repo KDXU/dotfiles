@@ -32,6 +32,7 @@ on_ft = 'erlang'
 
 [[plugins]]
 repo = 'fatih/vim-go'
+on_ft = 'go'
 
 [[plugins]]
 repo = 'zchee/deoplete-go'
@@ -39,6 +40,7 @@ on_ft = 'go'
 
 [[plugins]]
 repo = 'racer-rust/vim-racer'
+on_ft = 'rust'
 
 [[plugins]]
 repo = 'rust-lang/rust.vim'
@@ -48,14 +50,8 @@ on_ft = 'rust'
 repo = 'nvie/vim-flake8'
 on_ft = 'python'
 
-# Django & VirtualEnv
 [[plugins]]
 repo = 'lambdalisue/vim-django-support'
-on_ft = 'python'
-
-[[plugins]]
-repo = 'jmcantrell/vim-virtualenv'
-on_ft = 'python'
 
 [[plugins]]
 repo= 'maxmellon/vim-jsx-pretty'
@@ -64,7 +60,21 @@ on_ft = ['javascript']
 [[plugins]]
 repo = 'flowtype/vim-flow'
 on_ft = ['javascript']
+build = 'npm install -g flow-bin'
+
 
 [[plugins]]
 repo = 'davidhalter/jedi-vim'
 on_ft = 'python'
+
+[[plugins]]
+repo = 'JulesWang/css.vim'
+on_ft = 'css'
+
+[[plugins]]
+repo = 'cakebaker/scss-syntax.vim'
+on_ft = 'scss'
+
+[[plugins]]
+repo = 'vim-scripts/nginx.vim'
+on_ft = 'nginx'
