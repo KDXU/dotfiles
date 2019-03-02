@@ -10,7 +10,7 @@ test -d /usr/local/go/bin; and set -x PATH $PATH /usr/local/go/bin
 test -d ~/packages/elixir/bin; and set -x PATH $PATH ~/packages/elixir/bin
 set -x PATH $PATH ~/.yarn/bin
 set -x PATH $PATH ~/.config/yarn/global/node_modules/.bin
-
+set -x GOPATH $HOME/src/
 set -x PATH $PATH $HOME/dotfiles/bin
 
 # ssh-auth-sock
@@ -41,3 +41,8 @@ function fish_user_key_bindings
   bind \cr 'peco_select_history (commandline -b)'
 end
 set -g fish_user_paths "/usr/local/opt/openssl/bin" $fish_user_paths
+
+set -g fish_user_paths "/usr/local/opt/postgresql@10/bin" $fish_user_paths
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/kyoko/google-cloud-sdk/path.fish.inc' ]; if type source > /dev/null; source '/Users/kyoko/google-cloud-sdk/path.fish.inc'; else; . '/Users/kyoko/google-cloud-sdk/path.fish.inc'; end; end
