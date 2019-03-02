@@ -35,10 +35,6 @@ repo = 'fatih/vim-go'
 on_ft = 'go'
 
 [[plugins]]
-repo = 'zchee/deoplete-go'
-on_ft = 'go'
-
-[[plugins]]
 repo = 'racer-rust/vim-racer'
 on_ft = 'rust'
 
@@ -78,3 +74,11 @@ on_ft = 'scss'
 [[plugins]]
 repo = 'vim-scripts/nginx.vim'
 on_ft = 'nginx'
+
+[[plugins]]
+repo = 'vim-jp/cpp-vim'
+on_ft = 'cpp'
+
+[[plugins]]
+repo = 'leafgarland/typescript-vim'
+on_ft = 'typescript'
