@@ -103,14 +103,6 @@ call denite#custom#filter('matcher_ignore_globs', 'ignore_globs',
       \ '*.min.*',
       \ 'img/', 'fonts/'])
 
-" vim-go
-let g:go_highlight_functions = 1
-let g:go_highlight_methods = 1
-let g:go_highlight_structs = 1
-
-" gocode
-let g:deoplete#sources#go#gocode_binary = '$HOME/go/bin/gocode'
-
 " nginx
 au BufRead,BufNewFile /nginx/* set ft=nginx
 au BufRead,BufNewFile nginx.conf set ft=nginx
