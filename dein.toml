@@ -1,7 +1,4 @@
 [[plugins]]
-repo = 'w0ng/vim-hybrid'
-
-[[plugins]]
 repo = 'Shougo/dein.vim'
 on_cmd = 'Denite'
 
@@ -37,10 +34,6 @@ repo = 'thinca/vim-ref'
 [[plugins]]
 repo = 'Yggdroot/indentLine'
 
-
-[[plugins]]
-repo = 'airblade/vim-rooter'
-
 [[plugins]]
 repo = 'junegunn/vim-easy-align'
 
@@ -67,3 +60,9 @@ repo = 'vim-syntastic/syntastic'
 
 [[plugins]]
 repo = 'w0rp/ale'
+
+[[plugins]]
+repo = 'thinca/vim-quickrun'
+
+[[plugins]]
+repo = 'suan/vim-instant-markdown'

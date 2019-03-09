@@ -58,6 +58,9 @@ repo = 'flowtype/vim-flow'
 on_ft = ['javascript']
 build = 'npm install -g flow-bin'
 
+[[plugins]]
+repo = 'prettier/vim-prettier'
+on_ft = ['javascript']
 
 [[plugins]]
 repo = 'davidhalter/jedi-vim'

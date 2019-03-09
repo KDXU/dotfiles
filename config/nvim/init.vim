@@ -32,7 +32,6 @@ syntax enable
 
 set t_Co=256
 set background=dark
-colorscheme hybrid
 set mouse=a
 set encoding=utf-8
 set fileencodings=utf-8,sjis,euc-jp,iso-2022-jp
