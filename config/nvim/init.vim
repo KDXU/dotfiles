@@ -103,6 +103,11 @@ call denite#custom#filter('matcher_ignore_globs', 'ignore_globs',
       \ '*.min.*',
       \ 'img/', 'fonts/'])
 
+
+" バッファ切り替え
+nnoremap <silent> <C-j> :bprev<CR>
+nnoremap <silent> <C-k> :bnext<CR>
+
 " nginx
 au BufRead,BufNewFile /nginx/* set ft=nginx
 au BufRead,BufNewFile nginx.conf set ft=nginx
