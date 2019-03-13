@@ -30,4 +30,4 @@
 [gpg]
     program = gpg2
 [ghq]
-  root = ~/ghq/src
+  root = ~/src/
