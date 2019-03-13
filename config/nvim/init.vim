@@ -31,7 +31,7 @@ filetype plugin indent on
 syntax enable
 
 set t_Co=256
-colorscheme industry
+colorscheme jellybeans
 set background=dark
 set mouse=a
 set encoding=utf-8
@@ -63,7 +63,6 @@ end
 highlight Normal ctermbg=NONE
 
 "syntastic
-"set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 

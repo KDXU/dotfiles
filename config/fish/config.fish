@@ -1,4 +1,4 @@
-set ERLANG_VERSION "21.0.4"
+set ERLANG_VERSION "21.3"
 
 set -x EDITOR nvim
 
