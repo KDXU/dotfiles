@@ -11,6 +11,7 @@ test -d ~/packages/elixir/bin; and set -x PATH $PATH ~/packages/elixir/bin
 set -x PATH $PATH ~/.yarn/bin
 set -x PATH $PATH ~/.config/yarn/global/node_modules/.bin
 set -x GOPATH $HOME/src/
+set -x PATH $PATH $GOPATH/bin
 set -x PATH $PATH $HOME/dotfiles/bin
 
 # ssh-auth-sock
