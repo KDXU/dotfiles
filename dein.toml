@@ -49,10 +49,7 @@ repo = 'godlygeek/tabular'
 repo = 'tpope/vim-fugitive'
 
 [[plugins]]
-repo = 'vim-syntastic/syntastic'
-
-[[plugins]]
 repo = 'w0rp/ale'
 
 [[plugins]]
-repo = 'thinca/vim-quickrun'
+repo = 'itchyny/lightline.vim'

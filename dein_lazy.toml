@@ -51,15 +51,6 @@ repo = 'lambdalisue/vim-django-support'
 on_ft = 'python'
 
 [[plugins]]
-repo = 'flowtype/vim-flow'
-on_ft = ['javascript']
-build = 'npm install -g flow-bin'
-
-[[plugins]]
-repo = 'prettier/vim-prettier'
-on_ft = ['javascript']
-
-[[plugins]]
 repo = 'davidhalter/jedi-vim'
 on_ft = 'python'
 
@@ -90,6 +81,14 @@ on_ft = 'typescript'
 [[plugins]]
 repo = 'posva/vim-vue'
 on_ft = 'vue'
+
+[[plugins]]
+repo = 'flowtype/vim-flow'
+on_ft = 'javascript'
+
+[[plugins]]
+repo = 'prettier/vim-prettier'
+on_ft = ['javascript']
 
 [[plugins]]
 repo = 'maxmellon/vim-jsx-pretty'
