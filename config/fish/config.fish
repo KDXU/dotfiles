@@ -32,7 +32,9 @@ alias ocaml "rlwrap ocaml"
 
 # pyenv
 set -x PYENV_ROOT $HOME/.pyenv
-status --is-interactive; and source (pyenv init -|psub)
+set -x PATH $PATH $PYENV_ROOT/bin
+eval (pyenv init - | source)
+eval (pyenv virtualenv-init - | source)
 
 # kerl
 source ~/.otp/$ERLANG_VERSION/activate.fish
