@@ -17,8 +17,7 @@ set -x PATH $PATH $HOME/dotfiles/bin
 # ssh-auth-sock
 set -x SSH_AUTH_SOCK $HOME/.gnupg/S.gpg-agent.ssh
 
-# Opam
-# eval (direnv hook fish)
+eval (direnv hook fish)
 
 # aliases
 alias vim "nvim"
@@ -33,7 +32,7 @@ alias ocaml "rlwrap ocaml"
 # pyenv
 set -x PYENV_ROOT $HOME/.pyenv
 set -x PATH $PATH $PYENV_ROOT/bin
-status --is-interactive; pyenv init - | source
+eval (pyenv init - | source)
 pyenv virtualenv-init - | source
 
 # kerl
@@ -50,3 +49,9 @@ set -g fish_user_paths "/usr/local/opt/postgresql@10/bin" $fish_user_paths
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/kyoko/google-cloud-sdk/path.fish.inc' ]; if type source > /dev/null; source '/Users/kyoko/google-cloud-sdk/path.fish.inc'; else; . '/Users/kyoko/google-cloud-sdk/path.fish.inc'; end; end
 set -g fish_user_paths "/usr/local/opt/qt/bin" $fish_user_paths
+
+set -x ANDROID_HOME $HOME/Library/Android/sdk
+set -x PATH $PATH $ANDROID_HOME/emulator
+set -x PATH $PATH $ANDROID_HOME/tools
+set -x PATH $PATH $ANDROID_HOME/tools/bin
+set -x PATH $PATH $ANDROID_HOME/platform-tools

@@ -2,30 +2,10 @@
 repo = 'nanotech/jellybeans.vim'
 
 [[plugins]]
-repo = 'Shougo/dein.vim'
-on_cmd = 'Denite'
-
-[[plugins]]
-repo = 'Shougo/vimproc.vim'
-build = 'make'
-
-[[plugins]]
 repo = 'szw/vim-tags'
 
 [[plugins]]
-repo = 'Shougo/deoplete.nvim'
-
-[[plugins]]
-repo = 'roxma/nvim-yarp'
-
-[[plugins]]
-repo = 'roxma/vim-hug-neovim-rpc'
-
-[[plugins]]
 repo = 'tpope/vim-surround'
-
-[[plugins]]
-repo = 'cespare/vim-toml'
 
 [[plugins]]
 repo = 'thinca/vim-ref'
@@ -46,10 +26,8 @@ repo = 'ntpeters/vim-better-whitespace'
 repo = 'godlygeek/tabular'
 
 [[plugins]]
-repo = 'tpope/vim-fugitive'
-
-[[plugins]]
-repo = 'w0rp/ale'
-
-[[plugins]]
 repo = 'itchyny/lightline.vim'
+
+[[plugins]]
+repo = 'neoclide/coc.nvim'
+rev  = 'release'

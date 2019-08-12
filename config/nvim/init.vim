@@ -2,7 +2,6 @@ if &compatible
   set nocompatible
 endif
 
-
 " for Python
 let g:python_host_prog = $PYENV_ROOT.'/versions/neovim2/bin/python'
 let g:python3_host_prog = $PYENV_ROOT.'/versions/neovim3/bin/python'
@@ -62,20 +61,6 @@ end
 
 highlight Normal ctermbg=NONE
 
-" ale
-let g:ale_javascript_prettier_use_local_config = 1
-let g:ale_fix_on_save = 1
-let g:ale_statusline_format = ['E%d', 'W%d', '']
-let g:ale_fixers = {}
-let g:ale_fixers['javascript'] = ['prettier-eslint']
-let g:ale_linters = {
-      \'javascript': ['eslint', 'flow']
-      \}
-
-" deoplete.vim
-let g:deoplete#enable_at_startup = 1
-let g:deoplete#max_list = 20
-
 " ctags
 nnoremap <C-]> g<C-]>
 
@@ -93,3 +78,5 @@ au BufRead,BufNewFile *.md set filetype=markdown
 
 let g:flow#showquickfix = 0
 let g:indentLine_setConceal = 0
+
+let g:vim_jsx_pretty_highlight_close_tag = 1

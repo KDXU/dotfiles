@@ -6,4 +6,4 @@ fi
 
 echo "searching .$1 files includes word $2 in $3."
 
-ag -l -G "\.$1$" $2 $3 | xargs grep $2 -n
+ag -l -G "\.$1$" $2 $3 | xargs grep $2 -n -H
