@@ -21,12 +21,11 @@
 [push]
     default = upstream
 [pull]
-    rebase = true
+    rebase = false
 [diff]
     compactionHeuristic = true
 [commit]
     verbose = true
-    template = ~/dotfiles/gitmessage.txt
 [gpg]
     program = gpg2
 [ghq]
