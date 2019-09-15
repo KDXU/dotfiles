@@ -43,7 +43,6 @@ set formatoptions+=mM
 set number relativenumber
 set nonumber norelativenumber
 set number! relativenumber!
-set autoindent
 set title
 set showtabline=2
 set shiftwidth=2
@@ -72,6 +71,9 @@ nnoremap <silent> <C-k> :bnext<CR>
 au BufRead,BufNewFile /nginx/* set ft=nginx
 au BufRead,BufNewFile nginx.conf set ft=nginx
 
+" gin 用 tmpl
+au BufNewFile,BufRead *.tmpl set ft=html
+
 " markdown
 set syntax=markdown
 au BufRead,BufNewFile *.md set filetype=markdown
@@ -80,3 +82,8 @@ let g:flow#showquickfix = 0
 let g:indentLine_setConceal = 0
 
 let g:vim_jsx_pretty_highlight_close_tag = 1
+
+" html
+let g:html_indent_inctags = "html,body,head,tbody"
+let g:html_indent_script1 = "inc"
+let g:html_indent_style1 = "inc"

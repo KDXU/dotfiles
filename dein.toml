@@ -31,3 +31,6 @@ repo = 'itchyny/lightline.vim'
 [[plugins]]
 repo = 'neoclide/coc.nvim'
 rev  = 'release'
+
+[[plugins]]
+repo = 'tpope/vim-pathogen'
