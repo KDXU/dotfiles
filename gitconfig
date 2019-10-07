@@ -8,7 +8,7 @@
     branch = auto
     interactive = auto
 [core]
-    editor = nvim
+    editor = vim
 [alias]
     ps = push
     pl = pull

@@ -1,5 +1,5 @@
 [[plugins]]
-repo = 'nanotech/jellybeans.vim'
+repo = 'cocopon/iceberg.vim'
 
 [[plugins]]
 repo = 'szw/vim-tags'
@@ -17,9 +17,6 @@ repo = 'Yggdroot/indentLine'
 repo = 'junegunn/vim-easy-align'
 
 [[plugins]]
-repo = 'dag/vim-fish'
-
-[[plugins]]
 repo = 'ntpeters/vim-better-whitespace'
 
 [[plugins]]
@@ -29,8 +26,7 @@ repo = 'godlygeek/tabular'
 repo = 'itchyny/lightline.vim'
 
 [[plugins]]
-repo = 'neoclide/coc.nvim'
-rev  = 'release'
+repo = 'tpope/vim-pathogen'
 
 [[plugins]]
-repo = 'tpope/vim-pathogen'
+repo = 'vim-syntastic/syntastic'
