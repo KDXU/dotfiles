@@ -6,7 +6,6 @@ ln -snvf ~/dotfiles/dein_lazy.toml .dein_lazy.toml
 
 ln -snvf ~/dotfiles/vimrc .vimrc
 ln -snvf ~/dotfiles/zshrc .zshrc
-ln -snvf dotfiles/.iex.exs .
 
 mkdir -p ~/.vim/dein
 
