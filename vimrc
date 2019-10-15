@@ -2,12 +2,6 @@ if &compatible
   set nocompatible
 endif
 
-" for Python
-let g:python_host_prog = $PYENV_ROOT.'/versions/neovim2/bin/python'
-let g:python3_host_prog = $PYENV_ROOT.'/versions/neovim3/bin/python'
-let g:loaded_ruby_provider = 1
-let g:loaded_node_provider = 1
-
 " dein.vim
 set runtimepath+=$HOME/.cache/dein/repos/github.com/Shougo/dein.vim
 
