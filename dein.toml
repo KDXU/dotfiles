@@ -1,5 +1,5 @@
 [[plugins]]
-repo = 'cocopon/iceberg.vim'
+repo = 'arcticicestudio/nord-vim'
 
 [[plugins]]
 repo = 'szw/vim-tags'

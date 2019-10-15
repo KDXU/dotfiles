@@ -21,14 +21,14 @@ if dein#check_install()
 endif
 
 let g:lightline = {
-      \ 'colorscheme': 'iceberg',
+      \ 'colorscheme': 'nord',
       \ }
 
 filetype plugin indent on
 syntax enable
 
 set t_Co=256
-colorscheme iceberg
+colorscheme nord
 set background=dark
 set mouse=a
 set encoding=utf-8
@@ -50,6 +50,7 @@ set expandtab
 set noswapfile
 set conceallevel=0
 set laststatus=2
+set backspace=indent,eol,start
 
 
 if has("mac")
