@@ -2,12 +2,6 @@ if &compatible
   set nocompatible
 endif
 
-" for Python
-let g:python_host_prog = $PYENV_ROOT.'/versions/neovim2/bin/python'
-let g:python3_host_prog = $PYENV_ROOT.'/versions/neovim3/bin/python'
-let g:loaded_ruby_provider = 1
-let g:loaded_node_provider = 1
-
 " dein.vim
 set runtimepath+=$HOME/.cache/dein/repos/github.com/Shougo/dein.vim
 
@@ -25,10 +19,6 @@ endif
 if dein#check_install()
   call dein#install()
 endif
-
-let g:lightline = {
-      \ 'colorscheme': 'iceberg',
-      \ }
 
 filetype plugin indent on
 syntax enable
@@ -84,7 +74,6 @@ au BufNewFile,BufRead *.tmpl set ft=html
 set syntax=markdown
 au BufRead,BufNewFile *.md set filetype=markdown
 
-let g:flow#showquickfix = 0
 let g:indentLine_setConceal = 0
 
 let g:vim_jsx_pretty_highlight_close_tag = 1
