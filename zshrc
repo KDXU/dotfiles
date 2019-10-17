@@ -67,9 +67,9 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
-alias lst='ls -ltr --color=auto'
-alias la='ls -la --color=auto'
-alias ll='ls -l --color=auto'
+alias lst='ls -ltr'
+alias la='ls -la'
+alias ll='ls -l'
 alias so='source'
 alias diff='diff -U1'
 alias tis='tig status'
@@ -89,3 +89,6 @@ export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(direnv hook zsh)"
 eval "$(pyenv init -)"
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
