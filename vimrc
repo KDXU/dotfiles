@@ -28,6 +28,7 @@ filetype plugin indent on
 syntax enable
 
 set t_Co=256
+autocmd ColorScheme * highlight Comment ctermfg=165 guifg=#FFFFFF
 colorscheme nord
 set background=dark
 set mouse=a
@@ -90,3 +91,4 @@ let g:html_indent_style1 = "inc"
 
 " tsx
 au BufNewFile,BufRead *.tsx set ft=typescript
+
