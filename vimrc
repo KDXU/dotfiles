@@ -28,6 +28,7 @@ filetype plugin indent on
 syntax enable
 
 set t_Co=256
+autocmd ColorScheme * highlight Comment ctermfg=165 guifg=#FFFFFF
 colorscheme nord
 set background=dark
 set mouse=a
@@ -79,7 +80,6 @@ au BufNewFile,BufRead *.tmpl set ft=html
 set syntax=markdown
 au BufRead,BufNewFile *.md set filetype=markdown
 
-let g:flow#showquickfix = 0
 let g:indentLine_setConceal = 0
 
 let g:vim_jsx_pretty_highlight_close_tag = 1
@@ -91,3 +91,4 @@ let g:html_indent_style1 = "inc"
 
 " tsx
 au BufNewFile,BufRead *.tsx set ft=typescript
+
