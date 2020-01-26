@@ -99,3 +99,5 @@ export NVM_DIR="$HOME/.nvm"
 alias cmakeclean='rm CMakeCache.txt cmake_install.cmake && rm -r CMakeFiles && rm Makefile'
 
 export ANDROID_HOME=/Users/kyoko/Library/Android/sdk
+
+alias typora="open -a typora"
