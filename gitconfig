@@ -17,7 +17,7 @@
     br = branch
     co = checkout
 [merge]
-    ff = true
+    ff = false
 [push]
     default = upstream
 [pull]
