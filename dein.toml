@@ -30,3 +30,6 @@ repo = 'tpope/vim-pathogen'
 
 [[plugins]]
 repo = 'vim-syntastic/syntastic'
+
+[[plugins]]
+repo = 'lambdalisue/fern.vim'

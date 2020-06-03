@@ -101,3 +101,5 @@ alias cmakeclean='rm CMakeCache.txt cmake_install.cmake && rm -r CMakeFiles && r
 export ANDROID_HOME=/Users/kyoko/Library/Android/sdk
 
 alias typora="open -a typora"
+
+export PATH=$PATH:~/Library/Android/sdk/platform-tools

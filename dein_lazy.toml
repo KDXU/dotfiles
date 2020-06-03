@@ -43,14 +43,6 @@ repo = 'rust-lang/rust.vim'
 on_ft = 'rust'
 
 [[plugins]]
-repo = 'nvie/vim-flake8'
-on_ft = 'python'
-
-[[plugins]]
-repo = 'lambdalisue/vim-django-support'
-on_ft = 'python'
-
-[[plugins]]
 repo = 'davidhalter/jedi-vim'
 on_ft = 'python'
 
@@ -83,10 +75,6 @@ repo = 'leafgarland/typescript-vim'
 on_ft = 'typescript'
 
 [[plugins]]
-repo = 'posva/vim-vue'
-on_ft = 'vue'
-
-[[plugins]]
 repo = 'flowtype/vim-flow'
 on_ft = ['javascript']
 
@@ -105,7 +93,3 @@ on_ft  =  ['c', 'cpp']
 [[plugins]]
 repo = 'cespare/vim-toml'
 on_ft = ['toml']
-
-[[plugins]]
-repo = 'udalov/kotlin-vim'
-on_ft = ['kotlin']
