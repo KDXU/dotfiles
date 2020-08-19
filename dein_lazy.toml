@@ -75,10 +75,6 @@ repo = 'leafgarland/typescript-vim'
 on_ft = 'typescript'
 
 [[plugins]]
-repo = 'flowtype/vim-flow'
-on_ft = ['javascript']
-
-[[plugins]]
 repo = 'prettier/vim-prettier'
 on_ft = ['javascript']
 
@@ -93,3 +89,7 @@ on_ft  =  ['c', 'cpp']
 [[plugins]]
 repo = 'cespare/vim-toml'
 on_ft = ['toml']
+
+[[plugins]]
+repo = 'neovimhaskell/haskell-vim'
+on_ft = 'haskell'

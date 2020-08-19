@@ -33,3 +33,7 @@ repo = 'vim-syntastic/syntastic'
 
 [[plugins]]
 repo = 'lambdalisue/fern.vim'
+
+[[repo]]
+repo = 'neoclide/coc.nvim'
+rev = 'release'
