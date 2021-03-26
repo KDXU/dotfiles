@@ -91,4 +91,6 @@ let g:html_indent_style1 = "inc"
 
 " tsx
 au BufNewFile,BufRead *.tsx set ft=typescript
+" stylish-haskell
+set formatprg=stylish-haskell
 

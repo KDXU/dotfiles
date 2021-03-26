@@ -37,3 +37,6 @@ repo = 'lambdalisue/fern.vim'
 [[repo]]
 repo = 'neoclide/coc.nvim'
 rev = 'release'
+
+[[plugins]]
+repo = 'LnL7/vim-nix'
