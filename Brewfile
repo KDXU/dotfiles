@@ -40,3 +40,7 @@ cask "gpg-suite"
 # direnv
 brew "direnv"
 
+# ocaml
+brew "opam"
+
+brew "rlwrap"
