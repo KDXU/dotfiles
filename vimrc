@@ -27,6 +27,7 @@ let g:lightline = {
 filetype plugin indent on
 syntax enable
 
+set shell=/bin/zsh
 set t_Co=256
 autocmd ColorScheme * highlight Comment ctermfg=165 guifg=#FFFFFF
 colorscheme nord
