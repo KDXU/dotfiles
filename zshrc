@@ -17,6 +17,34 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
+# User configuration
+
+# export MANPATH="/usr/local/man:$MANPATH"
+
+# You may need to manually set your language environment
+# export LANG=en_US.UTF-8
+
+# Preferred editor for local and remote sessions
+# if [[ -n $SSH_CONNECTION ]]; then
+#   export EDITOR='vim'
+# else
+#   export EDITOR='mvim'
+# fi
+
+# Compilation flags
+# export ARCHFLAGS="-arch x86_64"
+
+# Set personal aliases, overriding those provided by oh-my-zsh libs,
+# plugins, and themes. Aliases can be placed here, though oh-my-zsh
+# users are encouraged to define aliases within the ZSH_CUSTOM folder.
+# For a full list of active aliases, run `alias`.
+#
+# Example aliases
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
+fpath=(/usr/share/zsh/$ZSH_VERSION/functions/ $fpath)
+
+# User configuratios
 ulimit -n 1024
 
 alias zshconfig="vim ~/.zshrc"
@@ -38,10 +66,16 @@ export PATH="$GOPATH/bin:$PATH"
 export PATH="$HOME/dotfiles/bin:$PATH"
 export SSH_AUTH_SOCK="$HOME/.gnupg/S.gpg-agent.ssh"
 
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(direnv hook zsh)"
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
 alias cmakeclean='rm CMakeCache.txt cmake_install.cmake && rm -r CMakeFiles && rm Makefile'
 
 export ANDROID_HOME=/Users/kyoko/Library/Android/sdk
@@ -67,4 +101,5 @@ test -r /Users/kyoko/.opam/opam-init/init.zsh && . /Users/kyoko/.opam/opam-init/
 # rlwrap
 alias ocaml='rlwrap ocaml'
 
-eval "$(direnv hook zsh)"
+fpath=($(brew --prefix)/share/zsh/site-functions $fpath)
+export $FPATH
