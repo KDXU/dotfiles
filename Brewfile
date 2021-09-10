@@ -16,17 +16,11 @@ brew "redis"
 # ruby
 brew "ruby"
 
-# fish
-brew "fish"
-
-# tmux
-brew "tmux"
+# gh
+brew "gh"
 
 # ghq
 brew "ghq"
-
-# figlet
-brew "figlet"
 
 # yubikey personalization tool
 brew "ykpers"
@@ -36,11 +30,3 @@ cask "keybase"
 
 # gpg tools
 cask "gpg-suite"
-
-# direnv
-brew "direnv"
-
-# ocaml
-brew "opam"
-
-brew "rlwrap"
