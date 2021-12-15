@@ -18,7 +18,3 @@ curl https://sh.rustup.rs -sSf | sh
 
 # Git Config
 git config --global include.path ~/dotfiles/gitconfig
-
-
-sh ~/dotfiles/install_erlang.sh
-sh ~/dotfiles/install_elixir.sh
