@@ -2,7 +2,13 @@
 repo = 'arcticicestudio/nord-vim'
 
 [[plugins]]
-repo = 'szw/vim-tags'
+repo = 'delphinus/vim-auto-cursorline'
+
+[[pluguins]]
+repo = 'easymotion/vim-easymotion'
+
+[[plugins]]
+repo = 'tpope/vim-fugitive'
 
 [[plugins]]
 repo = 'tpope/vim-surround'
@@ -40,3 +46,12 @@ rev = 'release'
 
 [[plugins]]
 repo = 'LnL7/vim-nix'
+
+[[plugins]]
+repo = 'Xuyuanp/nerdtree-git-plugin'
+on = 'NERDTreeToggle'
+
+[[plugins]]
+repo = 'neoclide/coc.nvim',
+do = coc#util#install()
+

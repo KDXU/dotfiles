@@ -7,12 +7,10 @@ export UPDATE_ZSH_DAYS=13
 plugins=(
   git
   dotenv
-  osx
+  macos
   z
   docker
-  sbt
   stack
-  git-flow
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -44,17 +42,14 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 fpath=(/usr/share/zsh/$ZSH_VERSION/functions/ $fpath)
 
+if [ -e ~/.nix-profile/etc/profile.d/nix.sh ]; then
+  . ~/.nix-profile/etc/profile.d/nix.sh
+fi
+
+alias tis='tig status'
+
 # User configuratios
 ulimit -n 1024
-
-alias zshconfig="vim ~/.zshrc"
-alias ohmyzsh="vim ~/.oh-my-zsh"
-alias lst='ls -ltr'
-alias la='ls -la'
-alias ll='ls -l'
-alias so='source'
-alias diff='diff -U1'
-alias tis='tig status'
 
 export PATH="/usr/local/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
@@ -82,19 +77,15 @@ export ANDROID_HOME=/Users/kyoko/Library/Android/sdk
 
 export PATH=$PATH:~/Library/Android/sdk/platform-tools
 
-. $HOME/.nix-profile/etc/profile.d/nix.sh
+#. $HOME/.nix-profile/etc/profile.d/nix.sh
 
 export PATH="/usr/local/opt/openjdk/bin:$PATH"
 export PATH="/usr/local/opt/swagger-codegen@2/bin:$PATH"
 
-fpath=(/path/to/homebrew/share/zsh-completions $fpath)
+#fpath=(/homebrew/share/zsh-completions $fpath)
 
 autoload -U compinit
 compinit -u
-
-if [[ -d /Applications/MacVim.app ]]; then # MacVimが存在するならば
-    export PATH="/Applications/MacVim.app/Contents/bin:$PATH"
-fi
 
 # opam configuration
 test -r /Users/kyoko/.opam/opam-init/init.zsh && . /Users/kyoko/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
@@ -102,4 +93,7 @@ test -r /Users/kyoko/.opam/opam-init/init.zsh && . /Users/kyoko/.opam/opam-init/
 alias ocaml='rlwrap ocaml'
 
 fpath=($(brew --prefix)/share/zsh/site-functions $fpath)
+
 export $FPATH
+export NIX_PATH=darwin-config=$HOME/.nixpkgs/darwin-configuration.nix:$HOME/.nix-defexpr/channels${NIX_PATH:+:}$NIX_PATH
+source $HOME/.nix-profile/etc/profile.d/hm-session-vars.sh
