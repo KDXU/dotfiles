@@ -35,7 +35,7 @@ in
     "$HOME/.local/bin"
   ];
   home.sessionVariables = {
-    EDITOR = "nvim";
+    EDITOR = "vim";
   };
   home.stateVersion = "22.05";
   home.username = builtins.getEnv "USER";
