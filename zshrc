@@ -39,6 +39,7 @@ export PATH="$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 export GOPATH="$HOME/src/"
 export PATH="$GOPATH/bin:$PATH"
 export SSH_AUTH_SOCK="$HOME/.gnupg/S.gpg-agent.ssh"
+. '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
 
 eval "$(direnv hook zsh)"
 
@@ -46,14 +47,20 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-# Nix
-if [ -e ~/.nix-profile/etc/profile.d/nix.sh ]; then
-  . ~/.nix-profile/etc/profile.d/nix.sh
-fi
-export FPATH=$FPATH
-export NIX_PATH=darwin-config=$HOME/.nixpkgs/darwin-configuration.nix:$HOME/.nix-defexpr/channels${NIX_PATH:+:}$NIX_PATH
-
 fpath=($(brew --prefix)/share/zsh/site-functions $fpath)
 autoload -U compinit
 compinit -u
+export PATH="$PATH:/nix/var/nix/profiles/default/bin"
+export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+alias readlink=greadlink
 
+export NIX_PATH=$HOME/.nix-defexpr/channels:/nix/var/nix/profiles/per-user/root/channels${NIX_PATH:+:$NIX_PATH}
+
+fpath=(/usr/share/zsh/$ZSH_VERSION/functions/ $fpath)
+
+export FPATH=$FPATH
+export NIX_SSL_CERT_PATH=/nix/var/nix/profiles/default/etc/ssl/certs/ca-bundle.crt
+export NIX_SSL_CERT_FILE=/nix/var/nix/profiles/default/etc/ssl/certs/ca-bundle.crt
+
+export PATH="/usr/local/opt/swagger-codegen@2/bin:$PATH"
+source /Users/kyoko/.oh-my-zsh/custom/plugins/nix-shell/nix-shell.plugin.zsh
