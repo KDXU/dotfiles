@@ -26,17 +26,10 @@ cd ~
 mkdir -p ~/.config/karabiner/
 
 ln -snvf ~/dotfiles/bin/ ~/bin
-ln -snvf ~/dotfiles/tmux.conf .tmux.conf
 
 ln -snvf ~/dotfiles/vimrc .vimrc
 ln -snvf ~/dotfiles/zshrc .zshrc
 
-
-mkdir -p ~/.vim/dein
-
-# Dein
-curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
-sh installer.sh ~/.cache/dein
 
 # Git Config
 git config --global include.path ~/dotfiles/gitconfig

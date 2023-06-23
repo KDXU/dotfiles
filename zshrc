@@ -47,20 +47,23 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-fpath=($(brew --prefix)/share/zsh/site-functions $fpath)
+fpath=(/usr/share/zsh/$ZSH_VERSION/functions/ $fpath)
+
 autoload -U compinit
+
 compinit -u
+
 export PATH="$PATH:/nix/var/nix/profiles/default/bin"
 export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 alias readlink=greadlink
 
 export NIX_PATH=$HOME/.nix-defexpr/channels:/nix/var/nix/profiles/per-user/root/channels${NIX_PATH:+:$NIX_PATH}
 
-fpath=(/usr/share/zsh/$ZSH_VERSION/functions/ $fpath)
 
 export FPATH=$FPATH
-export NIX_SSL_CERT_PATH=/nix/var/nix/profiles/default/etc/ssl/certs/ca-bundle.crt
-export NIX_SSL_CERT_FILE=/nix/var/nix/profiles/default/etc/ssl/certs/ca-bundle.crt
 
 export PATH="/usr/local/opt/swagger-codegen@2/bin:$PATH"
 source /Users/kyoko/.oh-my-zsh/custom/plugins/nix-shell/nix-shell.plugin.zsh
+
+alias ssh-add-normal='ssh-add -D > /dev/null 2>&1; kill -0 ${SSH_AGENT_PID} > /dev/null 2>&1; if [ $? -ne 0 ]; then eval `ssh-agent`; fi; ssh-add ~/.ssh/id_ed25519'
+eval "$(ssh-agent)"

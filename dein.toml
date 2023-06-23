@@ -40,18 +40,11 @@ repo = 'vim-syntastic/syntastic'
 [[plugins]]
 repo = 'lambdalisue/fern.vim'
 
-[[repo]]
-repo = 'neoclide/coc.nvim'
-rev = 'release'
-
 [[plugins]]
 repo = 'LnL7/vim-nix'
 
 [[plugins]]
-repo = 'Xuyuanp/nerdtree-git-plugin'
-on = 'NERDTreeToggle'
+repo = 'ziglang/zig.vim'
 
 [[plugins]]
-repo = 'neoclide/coc.nvim',
-do = coc#util#install()
-
+repo = 'neoclide/coc.nvim'

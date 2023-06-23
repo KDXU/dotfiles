@@ -9,7 +9,7 @@ deps='
   python3-pip \
   neovim \
   tmux \
-  fish \
+  zsh \
   autoconf
   '
 sudo apt-get update
