@@ -20,8 +20,6 @@ in
       zshrc = link ./zshrc "~/.zshrc"
       vimrc = link ./vimrc "~/.vimrc"
       karabinerJSON = link ./karabiner.json "${config.xdg.configHome}/karabiner/karabiner.json";
-      deinToml = link ./dein.toml "~/.dein.toml";
-      deinLazyToml = link ./dein_lazy.toml "~/.dein_lazy.toml";
     };
   home.homeDirectory = builtins.getEnv "HOME";
   home.language.base = "en_US.UTF-8";
